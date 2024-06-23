@@ -8,8 +8,7 @@ public enum MouseState
     DEFAULT,
     UI,
     DOCK,
-    FISHINGZONELEFT,
-    FISHINGZONERIGHT,
+    FISHINGZONE,
     FISHINGMINIGAME,
 }
 
@@ -24,6 +23,8 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
         
         DontDestroyOnLoad(this);
+
+        CurrentMouseState = MouseState.DEFAULT;
     }
 
     private void OnDisable()
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
     }
     
     [SerializeField] private SeymourController _seymour;
+    [SerializeField] private FishingManager _fishingManager;
 
     public SeymourController GetSeymour() => _seymour;
+    public FishingManager GetFishingManager() => _fishingManager;
 }

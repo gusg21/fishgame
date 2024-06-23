@@ -13,8 +13,7 @@ public enum SeymourState
     // Walking to location
     WALKING,
     // Fishing
-    FISHINGLEFT,
-    FISHINGRIGHT,
+    FISHING,
 }
 
 public class SeymourController : MonoBehaviour
@@ -31,8 +30,7 @@ public class SeymourController : MonoBehaviour
 
     private SeymourState _state;
 
-    private Vector2 _fishingPosLeft = new Vector2(-.8f, -.15f);
-    private Vector2 _fishingPosRight = new Vector2(.5f, -.15f);
+    private Vector2 _fishingPos = new Vector2(.5f, -.15f);
     private bool _goingToFish;
     
     private Vector2 _targetPosition;
@@ -46,6 +44,10 @@ public class SeymourController : MonoBehaviour
             if (_goingToFish)
             {
                 transform.position = _targetPosition;
+                
+                _seymourRenderer.flipX = true;
+                _fishingRodRenderer.flipX = true;
+                
                 StartFishing?.Invoke();
                 _seymourAnimator.SetBool("Walking", false);
                 _fishingRodAnimator.SetTrigger("Equip");
@@ -75,7 +77,7 @@ public class SeymourController : MonoBehaviour
             switch (GameManager.CurrentMouseState)
             {
                 case MouseState.DOCK:
-                    if (_state == SeymourState.FISHINGLEFT || _state == SeymourState.FISHINGRIGHT)
+                    if (_state == SeymourState.FISHING)
                     {
                         _state = SeymourState.IDLE;
                         StopFishing?.Invoke();
@@ -88,21 +90,13 @@ public class SeymourController : MonoBehaviour
                     }
                     
                     break;
-                case MouseState.FISHINGZONELEFT:
-                    if (_state == SeymourState.FISHINGLEFT || _state == SeymourState.FISHINGRIGHT)
+                case MouseState.FISHINGZONE:
+                    if (_state == SeymourState.FISHING)
                     {
                         break;
                     }
-                    WalkToFishingSpot(_fishingPosLeft);
-                    _state = SeymourState.FISHINGLEFT;
-                    break;
-                case MouseState.FISHINGZONERIGHT:
-                    if (_state == SeymourState.FISHINGLEFT || _state == SeymourState.FISHINGRIGHT)
-                    {
-                        break;
-                    }
-                    WalkToFishingSpot(_fishingPosRight);
-                    _state = SeymourState.FISHINGRIGHT;
+                    WalkToFishingSpot(_fishingPos);
+                    _state = SeymourState.FISHING;
                     break;
                 
                 default:

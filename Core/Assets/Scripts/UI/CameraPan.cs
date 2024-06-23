@@ -9,8 +9,7 @@ public class CameraPan : MonoBehaviour
     [SerializeField] private float panSpeed;
 
     private readonly Vector3 _defaultPosition = new Vector3(0f, 0f, -10f);
-    private readonly Vector3 _fishingPositionLeft = new Vector3(-2f, 0f, -10f);
-    private readonly Vector3 _fishingPositionRight = new Vector3(2f, 0f, -10f);
+    private readonly Vector3 _fishingPosition = new Vector3(2f, 0f, -10f);
     
     private Vector3 _targetPosition = Vector3.zero;
     private bool _panning;
@@ -36,15 +35,7 @@ public class CameraPan : MonoBehaviour
 
     private void PanCamera()
     {
-        switch (GameManager.I.GetSeymour().GetSeymourState())
-        {
-            case SeymourState.FISHINGRIGHT:
-                _targetPosition = _fishingPositionRight;
-                break;
-            case SeymourState.FISHINGLEFT:
-                _targetPosition = _fishingPositionLeft;
-                break;
-        }
+        _targetPosition = _fishingPosition;
         _panning = true;
     }
     
