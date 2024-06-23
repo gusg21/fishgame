@@ -23,8 +23,10 @@ public class SeymourController : MonoBehaviour
     
     [SerializeField] private float walkSpeed;
 
-    private SpriteRenderer _spriteRenderer;
-    private Animator _animator;
+    [SerializeField] private SpriteRenderer _seymourRenderer;
+    [SerializeField] private SpriteRenderer _fishingRodRenderer;
+    [SerializeField] private Animator _seymourAnimator;
+    [SerializeField] private Animator _fishingRodAnimator;
 
     private SeymourState _state;
 
@@ -34,12 +36,6 @@ public class SeymourController : MonoBehaviour
     private Vector2 _targetPosition;
     private Vector2 _moveDirection;
 
-    private void Awake()
-    {
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        _animator = GetComponentInChildren<Animator>();
-    }
-
     private void Update()
     {
         // Stop moving if Seymour has reached target
@@ -47,7 +43,7 @@ public class SeymourController : MonoBehaviour
         {
             transform.position = _targetPosition;
             _state = SeymourState.IDLE;
-            _animator.SetBool("Walking", false);
+            _seymourAnimator.SetBool("Walking", false);
         }
         
         // Keep walking if no inputs this frame
@@ -70,12 +66,13 @@ public class SeymourController : MonoBehaviour
                     {
                         _state = SeymourState.IDLE;
                         StopFishing?.Invoke();
+                        _fishingRodAnimator.SetTrigger("Unequip");
                     }
                     else
                     {
                         StartWalkingToPosition(fixedMousePos);
                         _state = SeymourState.WALKING;
-                        _animator.SetBool("Walking", true);
+                        _seymourAnimator.SetBool("Walking", true);
                     }
                     
                     break;
@@ -83,11 +80,13 @@ public class SeymourController : MonoBehaviour
                     WalkToFishingSpot(_fishingPosLeft);
                     _state = SeymourState.FISHING;
                     StartFishing?.Invoke(-1);
+                    _fishingRodAnimator.SetTrigger("Equip");
                     break;
                 case MouseState.FISHINGZONERIGHT:
                     WalkToFishingSpot(_fishingPosRight);
                     _state = SeymourState.FISHING;
                     StartFishing?.Invoke(1);
+                    _fishingRodAnimator.SetTrigger("Equip");
                     break;
                 
                 default:
@@ -106,8 +105,11 @@ public class SeymourController : MonoBehaviour
         _targetPosition = target;
         _moveDirection = (target - (Vector2)transform.position).normalized;
 
-        if (_moveDirection.x < 0) _spriteRenderer.flipX = false;
-        else if (_moveDirection.x >= 0) _spriteRenderer.flipX = true;
+        if (_moveDirection.x < 0) _seymourRenderer.flipX = false;
+        else if (_moveDirection.x >= 0) _seymourRenderer.flipX = true;
+        
+        if (target.x < 0) _fishingRodRenderer.flipX = false;
+        else if (target.x >= 0) _fishingRodRenderer.flipX = true;
     }
 
     private void WalkToFishingSpot(Vector2 target)
@@ -122,7 +124,10 @@ public class SeymourController : MonoBehaviour
         }
         transform.position = _targetPosition;
         
-        if (target.x < 0) _spriteRenderer.flipX = false;
-        else if (target.x >= 0) _spriteRenderer.flipX = true;
+        if (target.x < 0) _seymourRenderer.flipX = false;
+        else if (target.x >= 0) _seymourRenderer.flipX = true;
+        
+        if (target.x < 0) _fishingRodRenderer.flipX = false;
+        else if (target.x >= 0) _fishingRodRenderer.flipX = true;
     }
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 842745803805745873}
   - component: {fileID: 3547907130321627841}
-  - component: {fileID: 3536289031544220578}
   - component: {fileID: 6740259693784894320}
   - component: {fileID: 8740420880448931276}
   m_Layer: 0
@@ -86,26 +85,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &3536289031544220578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5026981941345235002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 100
-  m_RefResolutionX: 480
-  m_RefResolutionY: 270
-  m_UpscaleRT: 0
-  m_PixelSnapping: 1
-  m_CropFrameX: 1
-  m_CropFrameY: 1
-  m_StretchFill: 1
 --- !u!81 &6740259693784894320
 AudioListener:
   m_ObjectHideFlags: 0
@@ -127,4 +106,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panSpeed: 2
-  panDistance: 2
