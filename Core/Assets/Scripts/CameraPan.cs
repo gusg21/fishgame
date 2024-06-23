@@ -34,14 +34,14 @@ public class CameraPan : MonoBehaviour
         }
     }
 
-    private void PanCamera(int value)
+    private void PanCamera()
     {
-        switch (value)
+        switch (GameManager.I.GetSeymour().GetSeymourState())
         {
-            case 1:
+            case SeymourState.FISHINGRIGHT:
                 _targetPosition = _fishingPositionRight;
                 break;
-            case -1:
+            case SeymourState.FISHINGLEFT:
                 _targetPosition = _fishingPositionLeft;
                 break;
         }
