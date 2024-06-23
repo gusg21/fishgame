@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0748bef57637b1a4887f0b613a98670d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depthFishPools:
+  - {fileID: 11400000, guid: c8822ef68070ba34eb625945dfbd0733, type: 2}
+  lureSelected: 1

@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveBetween : MonoBehaviour
+public class FishingUIMoveBetween : MonoBehaviour
 {
     [SerializeField] private bool _moveInOnAwake = false;
     [SerializeField] private bool _moveInOnEnable = false;
     [SerializeField] private bool _moveToOutPosOnAwake = false;
     [SerializeField] private float _moveTightness = 0.2f;
     [SerializeField] private float _moveSpeed = 2f;
-    public Vector3 _posOut;
-    public Vector3 _posIn;
+    [SerializeField] private Vector3 _posOut;
+    [SerializeField] private Vector3 _posIn;
     private Vector3 _currentTarget = Vector3.zero;
     private bool _moving;
 

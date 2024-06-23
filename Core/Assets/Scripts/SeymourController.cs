@@ -89,10 +89,18 @@ public class SeymourController : MonoBehaviour
                     
                     break;
                 case MouseState.FISHINGZONELEFT:
+                    if (_state == SeymourState.FISHINGLEFT || _state == SeymourState.FISHINGRIGHT)
+                    {
+                        break;
+                    }
                     WalkToFishingSpot(_fishingPosLeft);
                     _state = SeymourState.FISHINGLEFT;
                     break;
                 case MouseState.FISHINGZONERIGHT:
+                    if (_state == SeymourState.FISHINGLEFT || _state == SeymourState.FISHINGRIGHT)
+                    {
+                        break;
+                    }
                     WalkToFishingSpot(_fishingPosRight);
                     _state = SeymourState.FISHINGRIGHT;
                     break;
