@@ -8,7 +8,8 @@ public enum MouseState
     DEFAULT,
     UI,
     DOCK,
-    FISHING,
+    FISHINGZONELEFT,
+    FISHINGZONERIGHT,
     FISHINGMINIGAME,
 }
 
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         if (I == this) I = null;
     }
-
+    
     [SerializeField] private SeymourController _seymour;
 
     public SeymourController GetSeymour() => _seymour;
