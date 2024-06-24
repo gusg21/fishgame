@@ -30,34 +30,49 @@ public enum LureType
     PAPERMACHESPERMWHALE,
     BAGOFKRILL,
     COLOSSALSQUIDBAIT,
+}
 
+public enum HookType
+{
+    // For Carson to redo :)
+    NONE,
+    BASICHOOK = 2,
+    BETTERHOOK = 5,
 }
 
 public class FishingManager : MonoBehaviour
 {
+    [SerializeField] private FishingUI ui;
     [SerializeField] private List<DepthFishPool> depthFishPools;
 
     private Dictionary<Fish, int> _fishInventory = new();
     
     private List<Fish> _activeFish = new();
     private Fish _selectedFish;
-    private LureType _lureSelected;
+    private LureType _selectedLure;
+    private HookType _currentHookType;
     private int _currentDepth;
 
     private void Start()
     {
         SeymourController.onStartFishing += CreateActiveFish;
+        
         _currentDepth = 0;
+        
+        ui.HideMinigame();
     }
 
     private void Update()
     {
-        
+        if (GameManager.CurrentMouseState == MouseState.FISHINGMINIGAME)
+        {
+            ui.CheckMinigameClick();
+        }
     }
 
     public int GetCurrentDepth() => _currentDepth;
     
-    private void SelectLure(LureType type) => _lureSelected = type;
+    private void SelectLure(LureType type) => _selectedLure = type;
 
     private void CreateActiveFish()
     {
@@ -70,9 +85,11 @@ public class FishingManager : MonoBehaviour
                     _activeFish.Add(new Fish(data));
                 }
                 _selectedFish = GetFishToCatch();
-                return;
+                break;
             }
         }
+        
+        // Spawn visuals for fish
     }
 
     private Fish GetFishToCatch()
@@ -80,14 +97,17 @@ public class FishingManager : MonoBehaviour
         int chanceSum = 0;
         foreach (Fish fish in _activeFish)
         {
-            if (fish.GetBestLure() == _lureSelected)
+            foreach (LureType lure in fish.GetBestLure())
             {
-                chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
+                if (lure == _selectedLure)
+                {
+                    chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
+                    break;
+                }
             }
-            else
-            {
-                chanceSum += fish.GetCatchChance();
-            }
+            chanceSum += fish.GetCatchChance();
+            Debug.Log(chanceSum);
+            break;
         }
 
         int luckyNumber = Random.Range(1, chanceSum);
@@ -95,24 +115,25 @@ public class FishingManager : MonoBehaviour
         
         foreach (Fish fish in _activeFish)
         {
-            if (fish.GetBestLure() == _lureSelected)
+            foreach (LureType lure in fish.GetBestLure())
             {
-                if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance() + fish.GetBestLureCatchBonus())
+                if (lure == _selectedLure)
                 {
-                    return fish;
-                }
+                    if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance() + fish.GetBestLureCatchBonus())
+                    {
+                        return fish;
+                    }
 
-                chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
+                    chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
+                }
             }
-            else
+            
+            if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance())
             {
-                if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance())
-                {
-                    return fish;
-                }
-
-                chanceSum += fish.GetCatchChance();
+                return fish;
             }
+
+            chanceSum += fish.GetCatchChance();
         }
         return null;
     }
@@ -121,6 +142,7 @@ public class FishingManager : MonoBehaviour
     {
         Debug.Log("You caught a " + _selectedFish.GetName());
         AddFishToInventory(_selectedFish);
+        ui.HideMinigame();
         _activeFish.Clear();
     }
 
@@ -128,6 +150,7 @@ public class FishingManager : MonoBehaviour
     {
         Debug.Log("You failed to catch a " + _selectedFish.GetName());
         AddFishToInventory(_selectedFish);
+        ui.HideMinigame();
         _activeFish.Clear();
     }
 

@@ -13,6 +13,10 @@ public class FishingUI : MonoBehaviour
     [SerializeField] private BoxCollider2D minigameFishZone;
     [SerializeField] private BoxCollider2D minigamePlayerIcon;
     [SerializeField] private SpriteProgressBar minigameFatigueBar;
+    
+    private float _minigameFatigueReduceAmount = 0.05f;
+    private float _minigamePlayerIconSpeed = 2f;
+    private float _minigameFishBarSpeed = 2f;
 
     private void Start()
     {
@@ -22,12 +26,15 @@ public class FishingUI : MonoBehaviour
         SeymourController.onMinigameClick += CheckMinigameClick;
     }
 
-    private void Update()
+    public void UpdateMinigame()
     {
-        // move minigame objects
+        // move icon
+        // move fishbar
+        // move fish
+        // move fatigue
     }
 
-    private void CheckMinigameClick()
+    public void CheckMinigameClick()
     {
         if (Physics2D.IsTouching(minigameFishZone, minigamePlayerIcon))
         {
@@ -37,8 +44,18 @@ public class FishingUI : MonoBehaviour
         }
     }
 
-    private void SetDepthText()
+    public void SetDepthText()
     {
         depthText.text = "Depth: " + GameManager.I.GetFishingManager().GetCurrentDepth() + "m";
+    }
+
+    public void ShowMinigame()
+    {
+        
+    }
+
+    public void HideMinigame()
+    {
+        
     }
 }
