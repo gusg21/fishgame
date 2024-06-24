@@ -10,38 +10,43 @@ public class FishingUI : MonoBehaviour
     [SerializeField] private MoveBetween fishingBackground;
     [SerializeField] private TextMeshPro depthText;
 
-    [SerializeField] private BoxCollider2D minigameFishZone;
-    [SerializeField] private BoxCollider2D minigamePlayerIcon;
-    [SerializeField] private SpriteProgressBar minigameFatigueBar;
+    [Header("Fish Zone")]
+    [SerializeField] private Transform minigameFishZone;
+    [SerializeField] private float fzScaleY;
+    [SerializeField] private float fzMinY;
+    [SerializeField] private float fzMaxY;
     
-    private float _minigameFatigueReduceAmount = 0.05f;
-    private float _minigamePlayerIconSpeed = 2f;
-    private float _minigameFishBarSpeed = 2f;
+    [Header("Player Icon")]
+    [SerializeField] private Transform minigamePlayerIcon;
+    [SerializeField] private float piMinY;
+    [SerializeField] private float piMaxY;
+    
+    [Header("Fatigue Bar")]
+    [SerializeField] private SpriteProgressBar minigameFatigueBar;
 
     private void Start()
     {
-        SeymourController.onStartFishing += fishingBackground.MoveIn;
         SeymourController.onStartFishing += SetDepthText;
+        SeymourController.onStartFishing += fishingBackground.MoveIn;
         SeymourController.onStopFishing += fishingBackground.MoveOut;
-        SeymourController.onMinigameClick += CheckMinigameClick;
     }
 
-    public void UpdateMinigame()
+    public void UpdateMinigame(float fatigue)
     {
         // move icon
         // move fishbar
         // move fish
-        // move fatigue
+        minigameFatigueBar.SetValue(fatigue);
     }
 
-    public void CheckMinigameClick()
+    public bool CheckMinigameZonesOverlap()
     {
-        if (Physics2D.IsTouching(minigameFishZone, minigamePlayerIcon))
+        if (Vector2.Distance(minigameFishZone.position, minigamePlayerIcon.position) <= fzScaleY / 2)
         {
-            // lower fish fatigue
-            // check fish fatigue
-            
+            return true;
         }
+
+        return false;
     }
 
     public void SetDepthText()

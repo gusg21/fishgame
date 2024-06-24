@@ -48,8 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishingBackground: {fileID: 348202302050508077}
   depthText: {fileID: 5611602349978970714}
-  minigameFishZone: {fileID: 5259547221958095869}
-  minigamePlayerIcon: {fileID: 4615533179208748035}
+  minigameFishZone: {fileID: 2494288700388641908}
+  fzScaleY: 0.5
+  fzMinY: -1
+  fzMaxY: 1
+  minigamePlayerIcon: {fileID: 8144981362102420367}
+  piMinY: -1.175
+  piMaxY: 1.175
   minigameFatigueBar: {fileID: 3231262236360672209}
 --- !u!1 &1629780315222200734
 GameObject:
@@ -435,7 +440,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.25947714, y: 0.16}
   m_EdgeRadius: 0
 --- !u!1 &6781108825030445859
 GameObject:

@@ -123,6 +123,7 @@ public class SeymourController : MonoBehaviour
         _goingToFish = false;
         
         onStartFishing?.Invoke();
+        GameManager.CurrentMouseState = MouseState.FISHINGMINIGAME;
     }
 
     private void StopFishing()

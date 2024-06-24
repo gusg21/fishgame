@@ -43,20 +43,31 @@ public enum HookType
 
 public class FishingManager : MonoBehaviour
 {
+    // References
     [SerializeField] private FishingUI ui;
     [SerializeField] private List<DepthFishPool> depthFishPools;
 
+    // Inventory
     private Dictionary<Fish, int> _fishInventory = new();
     
+    // Fishing Settings
     private List<Fish> _activeFish = new();
     private Fish _selectedFish;
     private LureType _selectedLure;
     private HookType _currentHookType;
     private int _currentDepth;
+    
+    // Minigame Settings
+    private float _timeTillFishBite = 5f;
+    private float _minigameFatigueReduceAmount = 0.05f;
+    private float _minigamePlayerIconSpeed = 2f;
+    private float _minigameFishBarSpeed = 2f;
+    private float _currentFishFatigue = 1f;
 
     private void Start()
     {
         SeymourController.onStartFishing += CreateActiveFish;
+        SeymourController.onMinigameClick += CheckMinigameClick;
         
         _currentDepth = 0;
         
@@ -65,10 +76,7 @@ public class FishingManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.CurrentMouseState == MouseState.FISHINGMINIGAME)
-        {
-            ui.CheckMinigameClick();
-        }
+        ui.UpdateMinigame(_currentFishFatigue);
     }
 
     public int GetCurrentDepth() => _currentDepth;
@@ -91,6 +99,9 @@ public class FishingManager : MonoBehaviour
         }
         
         // Spawn visuals for fish
+        
+        // This won't be here, will appear after fish move around
+        ui.ShowMinigame();
     }
 
     private Fish GetFishToCatch()
@@ -98,17 +109,12 @@ public class FishingManager : MonoBehaviour
         int chanceSum = 0;
         foreach (Fish fish in _activeFish)
         {
-            foreach (LureType lure in fish.GetBestLure())
+            if (fish.GetBestLure().Contains(_selectedLure))
             {
-                if (lure == _selectedLure)
-                {
-                    chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
-                    break;
-                }
+                chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
+                continue;
             }
             chanceSum += fish.GetCatchChance();
-            Debug.Log(chanceSum);
-            break;
         }
 
         int luckyNumber = Random.Range(1, chanceSum);
@@ -116,27 +122,36 @@ public class FishingManager : MonoBehaviour
         
         foreach (Fish fish in _activeFish)
         {
-            foreach (LureType lure in fish.GetBestLure())
+            if (fish.GetBestLure().Contains(_selectedLure))
             {
-                if (lure == _selectedLure)
+                if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance() + fish.GetBestLureCatchBonus())
                 {
-                    if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance() + fish.GetBestLureCatchBonus())
-                    {
-                        return fish;
-                    }
-
-                    chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
+                    return fish;
                 }
+                chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
+                continue;
             }
             
             if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance())
             {
                 return fish;
             }
-
             chanceSum += fish.GetCatchChance();
         }
         return null;
+    }
+    
+    public void CheckMinigameClick()
+    {
+        if (ui.CheckMinigameZonesOverlap())
+        {
+            _currentFishFatigue -= _minigameFatigueReduceAmount;
+            if (_currentFishFatigue <= 0)
+            {
+                _currentFishFatigue = 1f;
+                CatchFish();
+            }
+        }
     }
 
     public void CatchFish()

@@ -24,6 +24,8 @@ namespace Agricosmic.Utilities
         [Range(0, 1)]
         private float _value;
 
+        public float GetCurrentValue() => _value;
+
         /// <summary>
         /// Hide the progress bar
         /// </summary>

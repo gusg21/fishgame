@@ -15,7 +15,7 @@ public class MouseStateCollider : MonoBehaviour
     
     private void OnMouseExit()
     {
-        if (GameManager.CurrentMouseState != MouseState.FISHINGMINIGAME || GameManager.CurrentMouseState != MouseState.UI)
+        if (GameManager.CurrentMouseState != MouseState.FISHINGMINIGAME)
             GameManager.CurrentMouseState = MouseState.DEFAULT;
     }
 }
