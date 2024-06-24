@@ -16,8 +16,8 @@ public class CameraPan : MonoBehaviour
 
     private void Start()
     {
-        SeymourController.StartFishing += PanCamera;
-        SeymourController.StopFishing += ResetCamera;
+        SeymourController.onStartFishing += PanCamera;
+        SeymourController.onStopFishing += ResetCamera;
     }
 
     private void Update()

@@ -16,4 +16,7 @@ public class FishData : ScriptableObject
     public int CatchChance;
     public LureType BestLure;
     public int BestLureCatchBonus;
+
+    [Header("Commerce Data")] 
+    public int SellPrice;
 }

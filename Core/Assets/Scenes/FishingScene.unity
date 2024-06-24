@@ -133,6 +133,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6607dc2fbc6a4fd4fa539f1d46475327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1229724910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8764287226137705767, guid: d35b42457d6d44a4286c84cdc92f2e03, type: 3}
+  m_PrefabInstance: {fileID: 2050786236832035652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0748bef57637b1a4887f0b613a98670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1494108993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,6 +497,10 @@ PrefabInstance:
       propertyPath: _seymour
       value: 
       objectReference: {fileID: 21227240}
+    - target: {fileID: 2008769619662905156, guid: 0e27ad397b3babd4789e58f28083be7d, type: 3}
+      propertyPath: _fishingManager
+      value: 
+      objectReference: {fileID: 1229724910}
     - target: {fileID: 2693108308597925868, guid: 0e27ad397b3babd4789e58f28083be7d, type: 3}
       propertyPath: m_Name
       value: GameManager

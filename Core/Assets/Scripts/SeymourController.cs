@@ -18,8 +18,9 @@ public enum SeymourState
 
 public class SeymourController : MonoBehaviour
 {
-    public static event Action StartFishing;
-    public static event Action StopFishing;
+    public static event Action onStartFishing;
+    public static event Action onMinigameClick;
+    public static event Action onStopFishing;
     
     [SerializeField] private float walkSpeed;
 
@@ -41,21 +42,11 @@ public class SeymourController : MonoBehaviour
         // Stop moving if Seymour has reached target
         if (Vector2.Distance(transform.position, _targetPosition) <= .01 && (_state == SeymourState.WALKING || _goingToFish))
         {
-            if (_goingToFish)
-            {
-                transform.position = _targetPosition;
-                
-                _seymourRenderer.flipX = true;
-                _fishingRodRenderer.flipX = true;
-                
-                StartFishing?.Invoke();
-                _seymourAnimator.SetBool("Walking", false);
-                _fishingRodAnimator.SetTrigger("Equip");
-                _goingToFish = false;
-            }
+            transform.position = _targetPosition;
+            
+            if (_goingToFish) StartFishing();
             else
             {
-                transform.position = _targetPosition;
                 _state = SeymourState.IDLE;
                 _seymourAnimator.SetBool("Walking", false);
             }
@@ -77,26 +68,15 @@ public class SeymourController : MonoBehaviour
             switch (GameManager.CurrentMouseState)
             {
                 case MouseState.DOCK:
-                    if (_state == SeymourState.FISHING)
-                    {
-                        _state = SeymourState.IDLE;
-                        StopFishing?.Invoke();
-                        _fishingRodAnimator.SetTrigger("Unequip");
-                    }
-                    else
-                    {
-                        StartWalkingToPosition(fixedMousePos);
-                        _state = SeymourState.WALKING;
-                    }
-                    
+                    if (_state == SeymourState.FISHING) StopFishing();
+                    else StartWalkingToPosition(fixedMousePos);
                     break;
                 case MouseState.FISHINGZONE:
-                    if (_state == SeymourState.FISHING)
-                    {
-                        break;
-                    }
-                    WalkToFishingSpot(_fishingPos);
-                    _state = SeymourState.FISHING;
+                    if (_state == SeymourState.FISHING) break;
+                    else WalkToFishingSpot(_fishingPos);
+                    break;
+                case MouseState.FISHINGMINIGAME:
+                    onMinigameClick?.Invoke();
                     break;
                 
                 default:
@@ -122,11 +102,34 @@ public class SeymourController : MonoBehaviour
         else if (target.x >= 0) _fishingRodRenderer.flipX = true;
         
         _seymourAnimator.SetBool("Walking", true);
+        
+        _state = SeymourState.WALKING;
     }
 
     private void WalkToFishingSpot(Vector2 target)
     {
         StartWalkingToPosition(target);
         _goingToFish = true;
+        _state = SeymourState.FISHING;
+    }
+
+    private void StartFishing()
+    {
+        _seymourRenderer.flipX = true;
+        _fishingRodRenderer.flipX = true;
+        
+        _seymourAnimator.SetBool("Walking", false);
+        _fishingRodAnimator.SetTrigger("Equip");
+        _goingToFish = false;
+        
+        onStartFishing?.Invoke();
+    }
+
+    private void StopFishing()
+    {
+        _state = SeymourState.IDLE;
+        _fishingRodAnimator.SetTrigger("Unequip");
+        
+        onStopFishing?.Invoke();
     }
 }

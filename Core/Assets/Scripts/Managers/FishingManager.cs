@@ -12,20 +12,18 @@ public enum LureType
 
 public class FishingManager : MonoBehaviour
 {
-    [Header("Game Data")]
     [SerializeField] private List<DepthFishPool> depthFishPools;
-    // Serialized only for debug
-    [SerializeField] private LureType lureSelected;
 
     private Dictionary<Fish, int> _fishInventory = new();
     
     private List<Fish> _activeFish = new();
     private Fish _selectedFish;
+    private LureType _lureSelected;
     private int _currentDepth;
 
     private void Start()
     {
-        SeymourController.StartFishing += CreateActiveFish;
+        SeymourController.onStartFishing += CreateActiveFish;
         _currentDepth = 0;
     }
 
@@ -36,7 +34,7 @@ public class FishingManager : MonoBehaviour
 
     public int GetCurrentDepth() => _currentDepth;
     
-    private void SelectLure(LureType type) => lureSelected = type;
+    private void SelectLure(LureType type) => _lureSelected = type;
 
     private void CreateActiveFish()
     {
@@ -59,7 +57,7 @@ public class FishingManager : MonoBehaviour
         int chanceSum = 0;
         foreach (Fish fish in _activeFish)
         {
-            if (fish.GetBestLure() == lureSelected)
+            if (fish.GetBestLure() == _lureSelected)
             {
                 chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
             }
@@ -74,7 +72,7 @@ public class FishingManager : MonoBehaviour
         
         foreach (Fish fish in _activeFish)
         {
-            if (fish.GetBestLure() == lureSelected)
+            if (fish.GetBestLure() == _lureSelected)
             {
                 if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance() + fish.GetBestLureCatchBonus())
                 {
