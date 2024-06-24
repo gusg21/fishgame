@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34bf6d8a8304304dab31a84237907fa, type: 3}
-  m_Name: crab
+  m_Name: whale-shark
   m_EditorClassIdentifier: 
-  Name: crab
-  Sprite: {fileID: 21300000, guid: a29d47f90edb9994c9145d5d2ff5edf5, type: 3}
+  Name: whale-shark
+  Sprite: {fileID: 0}
   CatchChance: 0
   BestLure: 0
   BestLureCatchBonus: 0
-  SellPrice: 12
+  SellPrice: 100
