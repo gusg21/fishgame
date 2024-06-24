@@ -14,7 +14,7 @@ public class FishData : ScriptableObject
     [Tooltip(
         "Put this on a scale between 1 and 20, from 1 being very rare to 20 being common")]
     public int CatchChance;
-    public LureType BestLure;
+    public List<LureType> BestLure;
     public int BestLureCatchBonus;
 
     [Header("Commerce Data")] 
