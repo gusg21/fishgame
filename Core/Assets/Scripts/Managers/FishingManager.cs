@@ -61,7 +61,7 @@ public class FishingManager : MonoBehaviour
     
     // Minigame Settings
     private float _timeTillFishBite = 5f;
-    private float _minigameFatigueReduceAmount = 0.1f;
+    private float _minigameFatigueChangeAmount = 0.2f;
     private float _currentFishFatigue = 1f;
 
     private void Start()
@@ -160,12 +160,16 @@ public class FishingManager : MonoBehaviour
     {
         if (ui.CheckMinigameZonesOverlap())
         {
-            _currentFishFatigue -= _minigameFatigueReduceAmount;
+            _currentFishFatigue -= _minigameFatigueChangeAmount;
             if (_currentFishFatigue <= 0)
             {
                 _currentFishFatigue = 1f;
                 CatchFish();
             }
+        }
+        else
+        {
+            _currentFishFatigue += _minigameFatigueChangeAmount / 4;
         }
     }
 

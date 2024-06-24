@@ -28,7 +28,7 @@ public class FishingUI : MonoBehaviour
     
     private float _minigamePlayerIconSpeed = 2f;
     private Vector3 _minigamePlayerIconDirection;
-    private float _minigameFishZoneSpeed = 2f;
+    private float _minigameFishZoneSpeed = 1f;
     private Vector3 _minigameFishZoneDirection;
 
     private void Start()
