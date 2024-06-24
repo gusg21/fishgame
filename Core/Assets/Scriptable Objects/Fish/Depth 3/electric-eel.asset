@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: electric-eel
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 090000000b000000
   BestLureCatchBonus: 0
   SellPrice: 18

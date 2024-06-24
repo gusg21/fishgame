@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: tuna
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 050000000e000000
   BestLureCatchBonus: 0
   SellPrice: 28
