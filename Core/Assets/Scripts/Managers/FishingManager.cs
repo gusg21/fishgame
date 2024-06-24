@@ -43,6 +43,8 @@ public enum HookType
 
 public class FishingManager : MonoBehaviour
 {
+    // Actions
+    public static event Action onMinigameComplete;
     // References
     [SerializeField] private FishingUI ui;
     [SerializeField] private List<DepthFishPool> depthFishPools;
@@ -59,9 +61,7 @@ public class FishingManager : MonoBehaviour
     
     // Minigame Settings
     private float _timeTillFishBite = 5f;
-    private float _minigameFatigueReduceAmount = 0.05f;
-    private float _minigamePlayerIconSpeed = 2f;
-    private float _minigameFishBarSpeed = 2f;
+    private float _minigameFatigueReduceAmount = 0.1f;
     private float _currentFishFatigue = 1f;
 
     private void Start()
@@ -70,13 +70,14 @@ public class FishingManager : MonoBehaviour
         SeymourController.onMinigameClick += CheckMinigameClick;
         
         _currentDepth = 0;
-        
-        ui.HideMinigame();
     }
 
     private void Update()
     {
-        ui.UpdateMinigame(_currentFishFatigue);
+        if (GameManager.CurrentMouseState == MouseState.FISHINGMINIGAME)
+        {
+            ui.UpdateMinigame(_currentFishFatigue);
+        }
     }
 
     public int GetCurrentDepth() => _currentDepth;
@@ -101,7 +102,7 @@ public class FishingManager : MonoBehaviour
         // Spawn visuals for fish
         
         // This won't be here, will appear after fish move around
-        ui.ShowMinigame();
+        StartMinigame();
     }
 
     private Fish GetFishToCatch()
@@ -141,6 +142,20 @@ public class FishingManager : MonoBehaviour
         return null;
     }
     
+    private void StartMinigame()
+    {
+        ui.ShowMinigame();
+        GameManager.CurrentMouseState = MouseState.FISHINGMINIGAME;
+    }
+
+    private void StopMinigame()
+    {
+        ui.HideMinigame();
+        GameManager.CurrentMouseState = MouseState.DEFAULT;
+        
+        onMinigameComplete?.Invoke();
+    }
+    
     public void CheckMinigameClick()
     {
         if (ui.CheckMinigameZonesOverlap())
@@ -158,7 +173,7 @@ public class FishingManager : MonoBehaviour
     {
         Debug.Log("You caught a " + _selectedFish.GetName());
         AddFishToInventory(_selectedFish);
-        ui.HideMinigame();
+        StopMinigame();
         _activeFish.Clear();
     }
 
@@ -166,7 +181,7 @@ public class FishingManager : MonoBehaviour
     {
         Debug.Log("You failed to catch a " + _selectedFish.GetName());
         AddFishToInventory(_selectedFish);
-        ui.HideMinigame();
+        StopMinigame();
         _activeFish.Clear();
     }
 

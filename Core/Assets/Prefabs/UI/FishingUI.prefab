@@ -48,11 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishingBackground: {fileID: 348202302050508077}
   depthText: {fileID: 5611602349978970714}
-  minigameFishZone: {fileID: 2494288700388641908}
+  minigameBarBackground: {fileID: 582083176753363885}
+  minigameFishZone: {fileID: 6706852075288813946}
   fzScaleY: 0.5
   fzMinY: -1
   fzMaxY: 1
-  minigamePlayerIcon: {fileID: 8144981362102420367}
+  minigamePlayerIcon: {fileID: 1047706483712892173}
   piMinY: -1.175
   piMaxY: 1.175
   minigameFatigueBar: {fileID: 3231262236360672209}

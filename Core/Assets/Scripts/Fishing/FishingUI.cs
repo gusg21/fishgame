@@ -4,25 +4,32 @@ using System.Collections.Generic;
 using Agricosmic.Utilities;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FishingUI : MonoBehaviour
 {
     [SerializeField] private MoveBetween fishingBackground;
     [SerializeField] private TextMeshPro depthText;
+    [SerializeField] private SpriteRenderer minigameBarBackground;
 
     [Header("Fish Zone")]
-    [SerializeField] private Transform minigameFishZone;
+    [SerializeField] private SpriteRenderer minigameFishZone;
     [SerializeField] private float fzScaleY;
     [SerializeField] private float fzMinY;
     [SerializeField] private float fzMaxY;
     
     [Header("Player Icon")]
-    [SerializeField] private Transform minigamePlayerIcon;
+    [SerializeField] private SpriteRenderer minigamePlayerIcon;
     [SerializeField] private float piMinY;
     [SerializeField] private float piMaxY;
     
     [Header("Fatigue Bar")]
     [SerializeField] private SpriteProgressBar minigameFatigueBar;
+    
+    private float _minigamePlayerIconSpeed = 2f;
+    private Vector3 _minigamePlayerIconDirection;
+    private float _minigameFishZoneSpeed = 2f;
+    private Vector3 _minigameFishZoneDirection;
 
     private void Start()
     {
@@ -33,15 +40,38 @@ public class FishingUI : MonoBehaviour
 
     public void UpdateMinigame(float fatigue)
     {
-        // move icon
-        // move fishbar
-        // move fish
+        // Move Player Icon
+        if (minigamePlayerIcon.transform.position.y >= piMaxY || minigamePlayerIcon.transform.position.y <= piMinY)
+        {
+            _minigamePlayerIconDirection *= -1f;
+            minigamePlayerIcon.transform.position += _minigamePlayerIconDirection * (_minigamePlayerIconSpeed * Time.deltaTime);
+        }
+        else
+        {
+            minigamePlayerIcon.transform.position += _minigamePlayerIconDirection * (_minigamePlayerIconSpeed * Time.deltaTime);
+        }
+        
+        // Move Fish Zone
+        if (minigameFishZone.transform.position.y >= fzMaxY || minigameFishZone.transform.position.y <= fzMinY)
+        {
+            _minigameFishZoneDirection *= -1f;
+            _minigameFishZoneSpeed += Random.Range(-.1f, .1f);
+            minigameFishZone.transform.position += _minigameFishZoneDirection * (_minigameFishZoneSpeed * Time.deltaTime);
+        }
+        else
+        {
+            _minigameFishZoneSpeed += Random.Range(-.1f, .1f);
+            minigameFishZone.transform.position += _minigameFishZoneDirection * (_minigameFishZoneSpeed * Time.deltaTime);
+        }
+        
+        // move fish visuals
+        
         minigameFatigueBar.SetValue(fatigue);
     }
 
     public bool CheckMinigameZonesOverlap()
     {
-        if (Vector2.Distance(minigameFishZone.position, minigamePlayerIcon.position) <= fzScaleY / 2)
+        if (Vector2.Distance(minigameFishZone.transform.position, minigamePlayerIcon.transform.position) <= fzScaleY / 2)
         {
             return true;
         }
@@ -56,11 +86,21 @@ public class FishingUI : MonoBehaviour
 
     public void ShowMinigame()
     {
+        _minigamePlayerIconDirection = new Vector3(0, Random.Range(0,2)*2-1, 0);
+        _minigameFishZoneDirection = new Vector3(0, Random.Range(0,2)*2-1, 0);
         
+        minigameBarBackground.color = Color.grey;
+        minigamePlayerIcon.color = Color.blue;
+        minigameFishZone.color = Color.green;
     }
 
     public void HideMinigame()
     {
-        
+        minigamePlayerIcon.transform.position = new Vector3(minigamePlayerIcon.transform.position.x, 0, minigamePlayerIcon.transform.position.z);
+        minigameFishZone.transform.position = new Vector3(minigameFishZone.transform.position.x, 0, minigameFishZone.transform.position.z);
+
+        minigameBarBackground.color = Color.clear;
+        minigamePlayerIcon.color = Color.clear;
+        minigameFishZone.color = Color.clear;
     }
 }

@@ -37,6 +37,11 @@ public class SeymourController : MonoBehaviour
     private Vector2 _targetPosition;
     private Vector2 _moveDirection;
 
+    private void Start()
+    {
+        FishingManager.onMinigameComplete += StopFishing;
+    }
+
     private void Update()
     {
         // Stop moving if Seymour has reached target
@@ -123,7 +128,6 @@ public class SeymourController : MonoBehaviour
         _goingToFish = false;
         
         onStartFishing?.Invoke();
-        GameManager.CurrentMouseState = MouseState.FISHINGMINIGAME;
     }
 
     private void StopFishing()
