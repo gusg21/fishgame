@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: blue-catfish
   Sprite: {fileID: 21300000, guid: c5f65ab65d257cf488aaa4ac53c55bdc, type: 3}
   CatchChance: 7
-  BestLure: 0
+  BestLure: 07000000090000000b000000
   BestLureCatchBonus: 0
   SellPrice: 16

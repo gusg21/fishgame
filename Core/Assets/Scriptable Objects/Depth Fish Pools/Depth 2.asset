@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6469869b080ac848ba347274b8c4108, type: 3}
+  m_Name: Depth 2
+  m_EditorClassIdentifier: 
+  DepthLayer: 0
+  CatchableFish:
+  - {fileID: 11400000, guid: 626b21c10b73776448277dcfc0e30523, type: 2}
+  - {fileID: 11400000, guid: f72507a4f5703624dbe85a1319378bbc, type: 2}
+  - {fileID: 11400000, guid: 49c414c5e82e89f46bccd324f5c2242e, type: 2}
+  - {fileID: 11400000, guid: 1eecd54025c86ea46aa2d918f54c7da7, type: 2}
+  - {fileID: 11400000, guid: a787dc5fb712e294a9a8868a2d578542, type: 2}
+  - {fileID: 11400000, guid: c8183fa0348d7994a91cb2ee530af5d7, type: 2}
+  - {fileID: 11400000, guid: dc5870cbe000bcc42997fc340cebc342, type: 2}

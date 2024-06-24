@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34bf6d8a8304304dab31a84237907fa, type: 3}
-  m_Name: golden-trout
+  m_Name: cuttlefish
   m_EditorClassIdentifier: 
-  Name: golden-trout
-  Sprite: {fileID: 21300000, guid: d500831b43c687f4091a75db2ffef14d, type: 3}
+  Name: cuttlefish
+  Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 090000000f000000
   BestLureCatchBonus: 0
-  SellPrice: 22
+  SellPrice: 19
