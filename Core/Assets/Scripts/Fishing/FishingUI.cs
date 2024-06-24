@@ -15,13 +15,11 @@ public class FishingUI : MonoBehaviour
     [Header("Fish Zone")]
     [SerializeField] private SpriteRenderer minigameFishZone;
     [SerializeField] private float fzScaleY;
-    [SerializeField] private float fzMinY;
-    [SerializeField] private float fzMaxY;
+    [SerializeField] private float fzHalfY;
     
     [Header("Player Icon")]
     [SerializeField] private SpriteRenderer minigamePlayerIcon;
-    [SerializeField] private float piMinY;
-    [SerializeField] private float piMaxY;
+    [SerializeField] private float piHalfY;
     
     [Header("Fatigue Bar")]
     [SerializeField] private SpriteProgressBar minigameFatigueBar;
@@ -41,7 +39,7 @@ public class FishingUI : MonoBehaviour
     public void UpdateMinigame(float fatigue)
     {
         // Move Player Icon
-        if (minigamePlayerIcon.transform.position.y >= piMaxY || minigamePlayerIcon.transform.position.y <= piMinY)
+        if (minigamePlayerIcon.transform.position.y >= piHalfY || minigamePlayerIcon.transform.position.y <= -piHalfY)
         {
             _minigamePlayerIconDirection *= -1f;
             minigamePlayerIcon.transform.position += _minigamePlayerIconDirection * (_minigamePlayerIconSpeed * Time.deltaTime);
@@ -52,7 +50,7 @@ public class FishingUI : MonoBehaviour
         }
         
         // Move Fish Zone
-        if (minigameFishZone.transform.position.y >= fzMaxY || minigameFishZone.transform.position.y <= fzMinY)
+        if (minigameFishZone.transform.position.y >= fzHalfY || minigameFishZone.transform.position.y <= -fzHalfY)
         {
             _minigameFishZoneDirection *= -1f;
             _minigameFishZoneSpeed += Random.Range(-.05f, .05f);
@@ -84,10 +82,13 @@ public class FishingUI : MonoBehaviour
         depthText.text = "Depth: " + GameManager.I.GetFishingManager().GetCurrentDepth() + "m";
     }
 
-    public void ShowMinigame()
+    public void ShowMinigame(float fishZoneSize)
     {
         _minigamePlayerIconDirection = new Vector3(0, Random.Range(0,2)*2-1, 0);
         _minigameFishZoneDirection = new Vector3(0, Random.Range(0,2)*2-1, 0);
+        
+        minigameFishZone.transform.localScale = new Vector3(0.2f, fishZoneSize, 1f);
+        fzHalfY = 1 + (0.05f * (6 - (fishZoneSize * 10f) - 1));
         
         minigameBarBackground.color = Color.grey;
         minigamePlayerIcon.color = Color.blue;
@@ -98,6 +99,9 @@ public class FishingUI : MonoBehaviour
     {
         minigamePlayerIcon.transform.position = new Vector3(minigamePlayerIcon.transform.position.x, 0, minigamePlayerIcon.transform.position.z);
         minigameFishZone.transform.position = new Vector3(minigameFishZone.transform.position.x, 0, minigameFishZone.transform.position.z);
+        
+        minigameFishZone.transform.localScale = new Vector3(0.2f, fzScaleY, 1f);
+        fzHalfY = 1 + (0.05f * (6 - (fzScaleY * 10f) - 1));
 
         minigameBarBackground.color = Color.clear;
         minigamePlayerIcon.color = Color.clear;

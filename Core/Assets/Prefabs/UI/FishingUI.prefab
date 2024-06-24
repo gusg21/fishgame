@@ -51,11 +51,9 @@ MonoBehaviour:
   minigameBarBackground: {fileID: 582083176753363885}
   minigameFishZone: {fileID: 6706852075288813946}
   fzScaleY: 0.5
-  fzMinY: -1
-  fzMaxY: 1
+  fzHalfY: 1
   minigamePlayerIcon: {fileID: 1047706483712892173}
-  piMinY: -1.175
-  piMaxY: 1.175
+  piHalfY: 1.175
   minigameFatigueBar: {fileID: 3231262236360672209}
 --- !u!1 &1629780315222200734
 GameObject:

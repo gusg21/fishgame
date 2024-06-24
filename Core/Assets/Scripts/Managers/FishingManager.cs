@@ -144,7 +144,8 @@ public class FishingManager : MonoBehaviour
     
     private void StartMinigame()
     {
-        ui.ShowMinigame();
+        float fishZoneDifficulty = 0.6f - _selectedFish.GetDifficulty() * .1f;
+        ui.ShowMinigame(fishZoneDifficulty);
         GameManager.CurrentMouseState = MouseState.FISHINGMINIGAME;
     }
 

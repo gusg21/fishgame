@@ -11,11 +11,14 @@ public class FishData : ScriptableObject
     public Sprite Sprite;
 
     [Header("Fishing Data")]
-    [Tooltip(
-        "Put this on a scale between 1 and 20, from 1 being very rare to 20 being common")]
+    [Tooltip("1 (Rare) to 20 (Common)")]
     public int CatchChance;
     public List<LureType> BestLure;
     public int BestLureCatchBonus;
+
+    [Header("Minigame Data")]
+    [Tooltip("1 (Easy) to 5 (Hard)")]
+    public int Difficulty;
 
     [Header("Commerce Data")] 
     public int SellPrice;

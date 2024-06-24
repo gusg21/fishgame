@@ -10,6 +10,7 @@ public class Fish
     public int GetCatchChance() => _data.CatchChance;
     public List<LureType> GetBestLure() => _data.BestLure;
     public int GetBestLureCatchBonus() => _data.BestLureCatchBonus;
+    public int GetDifficulty() => _data.Difficulty;
 
     public Fish(FishData data) => _data = data;
 }
