@@ -169,7 +169,7 @@ public class FishingManager : MonoBehaviour
         }
         else
         {
-            _currentFishFatigue += _minigameFatigueChangeAmount / 4;
+            _currentFishFatigue += _minigameFatigueChangeAmount / 2;
         }
     }
 

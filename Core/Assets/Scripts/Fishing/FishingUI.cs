@@ -55,12 +55,12 @@ public class FishingUI : MonoBehaviour
         if (minigameFishZone.transform.position.y >= fzMaxY || minigameFishZone.transform.position.y <= fzMinY)
         {
             _minigameFishZoneDirection *= -1f;
-            _minigameFishZoneSpeed += Random.Range(-.1f, .1f);
+            _minigameFishZoneSpeed += Random.Range(-.05f, .05f);
             minigameFishZone.transform.position += _minigameFishZoneDirection * (_minigameFishZoneSpeed * Time.deltaTime);
         }
         else
         {
-            _minigameFishZoneSpeed += Random.Range(-.1f, .1f);
+            _minigameFishZoneSpeed += Random.Range(-.05f, .05f);
             minigameFishZone.transform.position += _minigameFishZoneDirection * (_minigameFishZoneSpeed * Time.deltaTime);
         }
         
