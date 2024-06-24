@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: starfish
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 1300000011000000
   BestLureCatchBonus: 0
   SellPrice: 129

@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: frog-scuba
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 02000000
   BestLureCatchBonus: 0
   SellPrice: 69

@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: box-jellyfish
   Sprite: {fileID: 21300000, guid: 57ca3076475cfe247bae98ded909d654, type: 3}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 0500000012000000
   BestLureCatchBonus: 0
   SellPrice: 120

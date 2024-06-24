@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: lion-fish
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 110000000c000000
   BestLureCatchBonus: 0
   SellPrice: 26

@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: manta-ray
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 0e000000
   BestLureCatchBonus: 0
   SellPrice: 80

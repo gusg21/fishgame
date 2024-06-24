@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: coconut-shrimp
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 040000000f000000
   BestLureCatchBonus: 0
   SellPrice: 88

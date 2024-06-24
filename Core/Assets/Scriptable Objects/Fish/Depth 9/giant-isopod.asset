@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: giant-isopod
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 10000000
   BestLureCatchBonus: 0
   SellPrice: 181

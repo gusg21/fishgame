@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: orca
   Sprite: {fileID: 0}
   CatchChance: 0
-  BestLure: 0
+  BestLure: 11000000
   BestLureCatchBonus: 0
   SellPrice: 150
