@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: electric-eel
   Sprite: {fileID: 0}
-  CatchChance: 0
-  BestLure: 090000000b000000
-  BestLureCatchBonus: 0
+  CatchChance: 5
+  BestLure: 0b000000
+  BestLureCatchBonus: 15
+  Difficulty: 2
   SellPrice: 18

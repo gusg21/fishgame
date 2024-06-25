@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: lion-fish
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 17
   BestLure: 110000000c000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 2
+  Difficulty: 2
   SellPrice: 26

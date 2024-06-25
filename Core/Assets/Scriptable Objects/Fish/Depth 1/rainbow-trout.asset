@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: rainbow-trout
   Sprite: {fileID: 21300000, guid: 34b5354e37c8b594395fbe0a1888395a, type: 3}
-  CatchChance: 7
-  BestLure: 03000000050000000600000000000000
-  BestLureCatchBonus: 6
+  CatchChance: 4
+  BestLure: 030000000500000006000000
+  BestLureCatchBonus: 11
   Difficulty: 3
-  SellPrice: 0
+  SellPrice: 6

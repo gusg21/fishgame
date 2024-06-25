@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: swordfish
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 3
   BestLure: 150000000c000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 13
+  Difficulty: 4
   SellPrice: 40

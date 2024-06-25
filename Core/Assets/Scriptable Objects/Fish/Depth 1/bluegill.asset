@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: bluegill
   Sprite: {fileID: 0}
-  CatchChance: 13
+  CatchChance: 14
   BestLure: 0300000006000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 2
   Difficulty: 1
   SellPrice: 5

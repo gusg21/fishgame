@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: lemon-shark
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 2
   BestLure: 0700000010000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 7
+  Difficulty: 4
   SellPrice: 26

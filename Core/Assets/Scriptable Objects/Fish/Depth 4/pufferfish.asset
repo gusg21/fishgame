@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: pufferfish
   Sprite: {fileID: 0}
-  CatchChance: 0
-  BestLure: 120000001400000003000000
-  BestLureCatchBonus: 0
+  CatchChance: 15
+  BestLure: 0300000014000000
+  BestLureCatchBonus: 2
+  Difficulty: 1
   SellPrice: 27

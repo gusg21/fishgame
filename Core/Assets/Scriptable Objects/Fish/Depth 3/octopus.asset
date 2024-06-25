@@ -17,4 +17,5 @@ MonoBehaviour:
   CatchChance: 0
   BestLure: 0d00000010000000
   BestLureCatchBonus: 0
+  Difficulty: 3
   SellPrice: 20

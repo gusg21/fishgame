@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: king-crab
   Sprite: {fileID: 21300000, guid: 6662affa857009c469d813cf4f7f79b3, type: 3}
-  CatchChance: 2
+  CatchChance: 1
   BestLure: 0a000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 10
+  Difficulty: 4
   SellPrice: 25

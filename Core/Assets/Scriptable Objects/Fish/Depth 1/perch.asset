@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: perch
   Sprite: {fileID: 21300000, guid: 09e1866c43d8f3b48bd99a03e6befcd9, type: 3}
-  CatchChance: 10
+  CatchChance: 16
   BestLure: 0300000004000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 2
   Difficulty: 2
   SellPrice: 4

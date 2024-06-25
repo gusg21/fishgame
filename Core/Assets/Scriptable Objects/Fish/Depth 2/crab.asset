@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: crab
   Sprite: {fileID: 21300000, guid: a29d47f90edb9994c9145d5d2ff5edf5, type: 3}
-  CatchChance: 4
+  CatchChance: 14
   BestLure: 0600000002000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 3
+  Difficulty: 1
   SellPrice: 12

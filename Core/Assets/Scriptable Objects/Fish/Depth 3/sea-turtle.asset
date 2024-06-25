@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: sea-turtle
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 9
   BestLure: 0b0000000e0000000f000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 3
+  Difficulty: 3
   SellPrice: 23

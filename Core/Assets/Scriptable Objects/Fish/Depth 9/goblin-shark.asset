@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: goblin-shark
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 4
   BestLure: 0a00000012000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 4
+  Difficulty: 4
   SellPrice: 190

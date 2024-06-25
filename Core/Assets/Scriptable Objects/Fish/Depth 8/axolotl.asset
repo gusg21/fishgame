@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: axolotl
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 1
   BestLure: 080000000e000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 3
+  Difficulty: 2
   SellPrice: 134

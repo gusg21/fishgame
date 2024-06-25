@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: golden-trout
   Sprite: {fileID: 21300000, guid: d500831b43c687f4091a75db2ffef14d, type: 3}
-  CatchChance: 0
+  CatchChance: 4
   BestLure: 080000000a000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 13
+  Difficulty: 3
   SellPrice: 22

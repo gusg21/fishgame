@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: dolphin
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 5
   BestLure: 0800000014000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 8
+  Difficulty: 4
   SellPrice: 59

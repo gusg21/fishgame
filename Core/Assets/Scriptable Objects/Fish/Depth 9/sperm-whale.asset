@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: sperm-whale
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 1
   BestLure: 18000000
-  BestLureCatchBonus: 0
-  SellPrice: 350
+  BestLureCatchBonus: 999
+  Difficulty: 5
+  SellPrice: 500

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: angelfish
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 5
   BestLure: 1200000011000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 7
+  Difficulty: 3
   SellPrice: 37

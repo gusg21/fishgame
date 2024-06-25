@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: whale-shark
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 1
   BestLure: 17000000
-  BestLureCatchBonus: 0
-  SellPrice: 100
+  BestLureCatchBonus: 99
+  Difficulty: 5
+  SellPrice: 250

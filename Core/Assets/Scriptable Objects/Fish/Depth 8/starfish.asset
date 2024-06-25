@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: starfish
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 12
   BestLure: 1300000011000000
-  BestLureCatchBonus: 0
+  BestLureCatchBonus: 5
+  Difficulty: 1
   SellPrice: 129

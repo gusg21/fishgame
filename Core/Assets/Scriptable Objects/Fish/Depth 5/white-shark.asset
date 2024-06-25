@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: white-shark
   Sprite: {fileID: 0}
-  CatchChance: 0
+  CatchChance: 1
   BestLure: 130000000c000000
-  BestLureCatchBonus: 0
-  SellPrice: 65
+  BestLureCatchBonus: 6
+  Difficulty: 5
+  SellPrice: 85
