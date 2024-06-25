@@ -59,8 +59,14 @@ public class FishingManager : MonoBehaviour
     private HookType _currentHookType;
     private int _currentDepth;
     
-    // Minigame Settings
+    // Timing Settings
+    private bool _waitForFishBite;
     private float _timeTillFishBite = 5f;
+    private bool _waitForFishRelease;
+    private float _timeTillFishRelease = 15f;
+    private float _currentTimer;
+    
+    // Minigame Settings
     private float _minigameFatigueChangeAmount = 0.2f;
     private float _currentFishFatigue = 1f;
 
@@ -70,13 +76,36 @@ public class FishingManager : MonoBehaviour
         SeymourController.onMinigameClick += CheckMinigameClick;
         
         _currentDepth = 0;
+        
+        ui.HideMinigame();
     }
 
     private void Update()
     {
         if (GameManager.CurrentMouseState == MouseState.FISHINGMINIGAME)
         {
-            ui.UpdateMinigame(_currentFishFatigue);
+            if (_waitForFishRelease)
+            {
+                if (_currentTimer <= 0)
+                {
+                    ReleaseFish();
+                    return;
+                }
+                
+                ui.UpdateFishVisuals();
+                ui.UpdateMinigame(_currentFishFatigue, (_timeTillFishRelease - _currentTimer) / _timeTillFishRelease);
+                _currentTimer -= Time.deltaTime;
+            }
+            else if (_waitForFishBite)
+            {
+                if (_currentTimer <= 0)
+                {
+                    StartMinigame();
+                }
+
+                ui.UpdateFishVisuals();
+                _currentTimer -= Time.deltaTime;
+            }
         }
     }
 
@@ -101,8 +130,9 @@ public class FishingManager : MonoBehaviour
         
         // Spawn visuals for fish
         
-        // This won't be here, will appear after fish move around
-        StartMinigame();
+        GameManager.CurrentMouseState = MouseState.FISHINGMINIGAME;
+        _currentTimer = _timeTillFishBite;
+        _waitForFishBite = true;
     }
 
     private Fish GetFishToCatch()
@@ -146,14 +176,17 @@ public class FishingManager : MonoBehaviour
     {
         float fishZoneDifficulty = 0.6f - _selectedFish.GetDifficulty() * .1f;
         ui.ShowMinigame(fishZoneDifficulty);
-        GameManager.CurrentMouseState = MouseState.FISHINGMINIGAME;
+        _currentFishFatigue = 1;
+        _currentTimer = _timeTillFishRelease;
+        _waitForFishBite = false;
+        _waitForFishRelease = true;
     }
 
     private void StopMinigame()
     {
         ui.HideMinigame();
         GameManager.CurrentMouseState = MouseState.DEFAULT;
-        
+        _waitForFishRelease = false;
         onMinigameComplete?.Invoke();
     }
     
@@ -171,6 +204,10 @@ public class FishingManager : MonoBehaviour
         else
         {
             _currentFishFatigue += _minigameFatigueChangeAmount / 2;
+            if (_currentFishFatigue > 1)
+            {
+                _currentFishFatigue = 1;
+            }
         }
     }
 

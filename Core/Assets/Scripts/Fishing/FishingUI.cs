@@ -23,6 +23,7 @@ public class FishingUI : MonoBehaviour
     
     [Header("Fatigue Bar")]
     [SerializeField] private SpriteProgressBar minigameFatigueBar;
+    [SerializeField] private SpriteProgressBar minigameTimerBar;
     
     private float _minigamePlayerIconSpeed = 2f;
     private Vector3 _minigamePlayerIconDirection;
@@ -36,7 +37,7 @@ public class FishingUI : MonoBehaviour
         SeymourController.onStopFishing += fishingBackground.MoveOut;
     }
 
-    public void UpdateMinigame(float fatigue)
+    public void UpdateMinigame(float fatigue, float timer)
     {
         // Move Player Icon
         if (minigamePlayerIcon.transform.position.y >= piHalfY || minigamePlayerIcon.transform.position.y <= -piHalfY)
@@ -62,9 +63,13 @@ public class FishingUI : MonoBehaviour
             minigameFishZone.transform.position += _minigameFishZoneDirection * (_minigameFishZoneSpeed * Time.deltaTime);
         }
         
-        // move fish visuals
-        
         minigameFatigueBar.SetValue(fatigue);
+        minigameTimerBar.SetValue(timer);
+    }
+
+    public void UpdateFishVisuals()
+    {
+        
     }
 
     public bool CheckMinigameZonesOverlap()
@@ -93,6 +98,8 @@ public class FishingUI : MonoBehaviour
         minigameBarBackground.color = Color.grey;
         minigamePlayerIcon.color = Color.blue;
         minigameFishZone.color = Color.green;
+        minigameFatigueBar.gameObject.SetActive(true);
+        minigameTimerBar.gameObject.SetActive(true);
     }
 
     public void HideMinigame()
@@ -106,5 +113,7 @@ public class FishingUI : MonoBehaviour
         minigameBarBackground.color = Color.clear;
         minigamePlayerIcon.color = Color.clear;
         minigameFishZone.color = Color.clear;
+        minigameFatigueBar.gameObject.SetActive(false);
+        minigameTimerBar.gameObject.SetActive(false);
     }
 }
