@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public enum LureType
 {
-    NONE,
-    TESTLURE,
     BAREHOOK,
     SUNBURSTPOPPER,
     EMERALDFROG,
@@ -36,9 +35,7 @@ public enum LureType
 
 public enum HookType
 {
-    // For Carson to redo :)
-    NONE,
-    BASICHOOK = 2,
+    BASICHOOK = 0,
     BETTERHOOK = 5,
 }
 
@@ -49,6 +46,7 @@ public class FishingManager : MonoBehaviour
     // References
     [SerializeField] private FishingUI ui;
     [SerializeField] private List<DepthFishPool> depthFishPools;
+    [SerializeField] private List<Lure> lures;
 
     [Header("Fishing Popups")] 
     [SerializeField] private FishingPopup caughtPopup;
@@ -58,9 +56,10 @@ public class FishingManager : MonoBehaviour
     [SerializeField] private SpriteRenderer popupFishIcon;
     
     // Fishing Settings
+    private Dictionary<Lure, bool> _unlockedLures = new();
     private List<Fish> _activeFish = new();
     private Fish _selectedFish;
-    private LureType _selectedLure;
+    private Lure _selectedLure;
     private HookType _currentHookType;
     private int _currentDepth;
     
@@ -79,14 +78,34 @@ public class FishingManager : MonoBehaviour
     {
         SeymourController.onStartFishing += CreateActiveFish;
         SeymourController.onMinigameClick += CheckMinigameClick;
+
+        List<bool> unlockedLuresValues = SaveSystem.LoadUnlockedLures();
+        for (int i = 0; i < lures.Count - 1; i++)
+        {
+            _unlockedLures.Add(lures[i], false);
+        }
         
+        _currentHookType = SaveSystem.LoadHookType();
         _currentDepth = 0;
+        _selectedLure = lures[0];
+        _unlockedLures[_selectedLure] = true;
         
         ui.HideMinigame();
     }
 
+    private void OnDestroy()
+    {
+        SaveSystem.SaveHookType(_currentHookType);
+        SaveSystem.SaveUnlockedLures(_unlockedLures);
+        Debug.Log("Progress saved!");
+    }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            _currentHookType = HookType.BETTERHOOK;
+        }
         if (GameManager.CurrentMouseState == MouseState.FISHINGMINIGAME)
         {
             if (_waitForFishRelease)
@@ -115,8 +134,16 @@ public class FishingManager : MonoBehaviour
     }
 
     public int GetCurrentDepth() => _currentDepth;
-    
-    private void SelectLure(LureType type) => _selectedLure = type;
+
+    public Lure GetNextUnlockedLure()
+    {
+        return _selectedLure;
+    }
+
+    public Lure GetPreviousUnlockedLure()
+    {
+        return _selectedLure;
+    }
 
     private void CreateActiveFish()
     {
@@ -145,7 +172,7 @@ public class FishingManager : MonoBehaviour
         int chanceSum = 0;
         foreach (Fish fish in _activeFish)
         {
-            if (fish.GetBestLure().Contains(_selectedLure))
+            if (fish.GetBestLure().Contains(_selectedLure.Type))
             {
                 chanceSum += fish.GetCatchChance() + fish.GetBestLureCatchBonus();
                 continue;
@@ -158,7 +185,7 @@ public class FishingManager : MonoBehaviour
         
         foreach (Fish fish in _activeFish)
         {
-            if (fish.GetBestLure().Contains(_selectedLure))
+            if (fish.GetBestLure().Contains(_selectedLure.Type))
             {
                 if (luckyNumber > chanceSum && luckyNumber <= chanceSum + fish.GetCatchChance() + fish.GetBestLureCatchBonus())
                 {

@@ -55,6 +55,13 @@ public class HUDManager : MonoBehaviour
             if (_storeOpen == true) storeMoveBetween.MoveIn();
             else storeMoveBetween.MoveOut();
         }
+        else
+        {
+            _storeOpen = true;
+            _libraryOpen = false;
+            storeMoveBetween.MoveIn();
+            libraryMoveBetween.MoveOut();
+        }
     }
     
     public void ToggleFishLibrary()
@@ -65,16 +72,27 @@ public class HUDManager : MonoBehaviour
             if (_libraryOpen == true) libraryMoveBetween.MoveIn();
             else libraryMoveBetween.MoveOut();
         }
+        else
+        {
+            _storeOpen = false;
+            _libraryOpen = true;
+            storeMoveBetween.MoveOut();
+            libraryMoveBetween.MoveIn();
+        }
     }
 
     public void SelectPreviousLure()
     {
-        
+        Lure nextLure = GameManager.I.GetFishingManager().GetPreviousUnlockedLure();
+        lureIcon.sprite = nextLure.LureSprite;
+        lureNameText.text = nextLure.name;
     }
 
     public void SelectNextLure()
     {
-        
+        Lure nextLure = GameManager.I.GetFishingManager().GetNextUnlockedLure();
+        lureIcon.sprite = nextLure.LureSprite;
+        lureNameText.text = nextLure.name;
     }
     
     public void EnableHUD()

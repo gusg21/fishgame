@@ -465,6 +465,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8230518482446040911, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8388579223653387825, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
       propertyPath: m_Color.b
       value: 0.21813813
@@ -500,6 +504,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 5896175080669813904, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2790063753947370863, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8626178841592638580, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
@@ -579,14 +589,6 @@ PrefabInstance:
       propertyPath: popupMoneyText
       value: 
       objectReference: {fileID: 3670779992281244268}
-    - target: {fileID: 8764287226137705767, guid: d35b42457d6d44a4286c84cdc92f2e03, type: 3}
-      propertyPath: depthFishPools.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764287226137705767, guid: d35b42457d6d44a4286c84cdc92f2e03, type: 3}
-      propertyPath: depthFishPools.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 10b9e13bc760eac498b48a7c3f74e9be, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -44,4 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0748bef57637b1a4887f0b613a98670d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depthFishPools: []
+  ui: {fileID: 0}
+  depthFishPools:
+  - {fileID: 11400000, guid: 10b9e13bc760eac498b48a7c3f74e9be, type: 2}
+  lures:
+  - {fileID: 11400000, guid: 1305fe2b2383c2c45822aa7d648b18a7, type: 2}
+  caughtPopup: {fileID: 0}
+  releasedPopup: {fileID: 0}
+  popupMoneyText: {fileID: 0}
+  popupFishText: {fileID: 0}
+  popupFishIcon: {fileID: 0}
+  _currentHookType: 0
