@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34bf6d8a8304304dab31a84237907fa, type: 3}
   m_Name: bluegill
   m_EditorClassIdentifier: 
-  Name: bluegill
-  Sprite: {fileID: 0}
+  Name: Bluegill
+  Sprite: {fileID: 21300000, guid: c5f65ab65d257cf488aaa4ac53c55bdc, type: 3}
   CatchChance: 14
   BestLure: 0300000006000000
   BestLureCatchBonus: 2

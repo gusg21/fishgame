@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34bf6d8a8304304dab31a84237907fa, type: 3}
   m_Name: smallmouth-bass
   m_EditorClassIdentifier: 
-  Name: smallmouth-bass
+  Name: Smallmouth Bass
   Sprite: {fileID: 21300000, guid: 47cf04c420854a84c9b1a73f1a544aa9, type: 3}
   CatchChance: 3
   BestLure: 0400000005000000

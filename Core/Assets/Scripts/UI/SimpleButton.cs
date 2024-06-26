@@ -21,19 +21,19 @@ namespace Agricosmic.UI
         [Tooltip("The sprite renderer to update the sprite of")]
         [SerializeField] private SpriteRenderer _renderer;
         
+        public bool Active { get; set; }
+        
         private bool _isMouseOver = false;
 
         private void Start()
         {
             FindReferences();
+            Active = true;
         }
 
         protected void FindReferences()
         {
             if (_renderer == null) _renderer = GetComponent<SpriteRenderer>();
-
-            var box = GetComponent<BoxCollider2D>();
-            box.size = new(_renderer.size.x, box.size.y);
         }
 
         protected SpriteRenderer GetRenderer() => _renderer;
@@ -43,11 +43,14 @@ namespace Agricosmic.UI
             _renderer.sprite = _isMouseOver ? _hoverSprite : _normalSprite;
         }
 
+        public SpriteRenderer GetSpriteRenderer() => _renderer;
        
         private void OnMouseEnter()
         {
-            if (GameManager.CurrentMouseState == MouseState.DEFAULT)
+            if (GameManager.CurrentMouseState == MouseState.DEFAULT && Active)
+            {
                 _isMouseOver = true;
+            }
         }
 
         private void OnMouseExit()
@@ -57,14 +60,18 @@ namespace Agricosmic.UI
 
         private void OnMouseDown()
         {
+            if (_isMouseOver)
+                _onClick?.Invoke(this); 
+            
             _isMouseOver = false;
-            _onClick?.Invoke(this); 
         }
 
         private void OnMouseUp()
         {
-            if (GameManager.CurrentMouseState == MouseState.DEFAULT)
+            if (GameManager.CurrentMouseState == MouseState.DEFAULT && Active)
+            {
                 _isMouseOver = true;
+            }
         }
     }
 }

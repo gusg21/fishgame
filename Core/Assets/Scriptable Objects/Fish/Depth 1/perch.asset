@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34bf6d8a8304304dab31a84237907fa, type: 3}
   m_Name: perch
   m_EditorClassIdentifier: 
-  Name: perch
+  Name: Perch
   Sprite: {fileID: 21300000, guid: 09e1866c43d8f3b48bd99a03e6befcd9, type: 3}
   CatchChance: 16
   BestLure: 0300000004000000

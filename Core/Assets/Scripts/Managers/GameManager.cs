@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager I;
     public static MouseState CurrentMouseState { get; set; }
+    public float CurrentMoney { get; set; }
 
     private void Awake()
     {
@@ -34,7 +35,9 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private SeymourController _seymour;
     [SerializeField] private FishingManager _fishingManager;
+    [SerializeField] private HUDManager _hudManager;
 
     public SeymourController GetSeymour() => _seymour;
     public FishingManager GetFishingManager() => _fishingManager;
+    public HUDManager GetHUDManager() => _hudManager;
 }

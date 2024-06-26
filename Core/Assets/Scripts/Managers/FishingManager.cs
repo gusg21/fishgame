@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -49,8 +50,12 @@ public class FishingManager : MonoBehaviour
     [SerializeField] private FishingUI ui;
     [SerializeField] private List<DepthFishPool> depthFishPools;
 
-    // Inventory
-    private Dictionary<Fish, int> _fishInventory = new();
+    [Header("Fishing Popups")] 
+    [SerializeField] private FishingPopup caughtPopup;
+    [SerializeField] private FishingPopup releasedPopup;
+    [SerializeField] private TextMeshPro popupMoneyText;
+    [SerializeField] private TextMeshPro popupFishText;
+    [SerializeField] private SpriteRenderer popupFishIcon;
     
     // Fishing Settings
     private List<Fish> _activeFish = new();
@@ -213,41 +218,20 @@ public class FishingManager : MonoBehaviour
 
     public void CatchFish()
     {
-        Debug.Log("You caught a " + _selectedFish.GetName());
-        AddFishToInventory(_selectedFish);
+        popupFishText.text = "You caught a " + _selectedFish.GetName() + "!";
+        popupMoneyText.text = _selectedFish.GetSellPrice().ToString();
+        popupFishIcon.sprite = _selectedFish.GetSprite();
+        caughtPopup.Appear();
+        
+        GameManager.I.CurrentMoney += _selectedFish.GetSellPrice();
         StopMinigame();
         _activeFish.Clear();
     }
 
     public void ReleaseFish()
     {
-        Debug.Log("You failed to catch a " + _selectedFish.GetName());
-        AddFishToInventory(_selectedFish);
+        releasedPopup.Appear();
         StopMinigame();
         _activeFish.Clear();
     }
-
-    private void AddFishToInventory(Fish fishToAdd)
-    {
-        foreach (KeyValuePair<Fish, int> fish in _fishInventory)
-        {
-            if (fishToAdd == fish.Key) _fishInventory[fish.Key]++;
-            return;
-        }
-        _fishInventory.Add(fishToAdd, 1);
-    }
-    
-    private void RemoveFishFromInventory(Fish fishToRemove)
-    {
-        foreach (KeyValuePair<Fish, int> fish in _fishInventory)
-        {
-            if (fishToRemove == fish.Key) _fishInventory[fish.Key]--;
-            if (_fishInventory[fish.Key] <= 0)
-            {
-                _fishInventory.Remove(fish.Key);
-            }
-            return;
-        }
-    }
-    
 }
