@@ -78,12 +78,6 @@ public class FishingManager : MonoBehaviour
     {
         SeymourController.onStartFishing += CreateActiveFish;
         SeymourController.onMinigameClick += CheckMinigameClick;
-
-        List<bool> unlockedLuresValues = SaveSystem.LoadUnlockedLures();
-        for (int i = 0; i < lures.Count - 1; i++)
-        {
-            _unlockedLures.Add(lures[i], false);
-        }
         
         _currentHookType = SaveSystem.LoadHookType();
         _currentDepth = 0;
@@ -96,7 +90,7 @@ public class FishingManager : MonoBehaviour
     private void OnDestroy()
     {
         SaveSystem.SaveHookType(_currentHookType);
-        SaveSystem.SaveUnlockedLures(_unlockedLures);
+        //SaveSystem.SaveUnlockedLures(_unlockedLures);
         Debug.Log("Progress saved!");
     }
 

@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Sunburst Popper
   m_EditorClassIdentifier: 
   Type: 1
-  LureSprite: {fileID: 0}
-  TargetFish: []
+  LureSprite: {fileID: 21300000, guid: 250f003884fbdd945aa5e9328d165b4d, type: 3}
