@@ -19,6 +19,7 @@ public class FishingUI : MonoBehaviour
     
     [Header("Player Icon")]
     [SerializeField] private SpriteRenderer minigamePlayerIcon;
+    [SerializeField] private UIEmphasizer emphasizer;
     [SerializeField] private float piHalfY;
     
     [Header("Fatigue Bar")]
@@ -74,6 +75,7 @@ public class FishingUI : MonoBehaviour
 
     public bool CheckMinigameZonesOverlap()
     {
+        emphasizer.Emphasize(.25f);
         if (Vector2.Distance(minigameFishZone.transform.position, minigamePlayerIcon.transform.position) <= fzScaleY / 2)
         {
             return true;
@@ -91,13 +93,12 @@ public class FishingUI : MonoBehaviour
     {
         _minigamePlayerIconDirection = new Vector3(0, Random.Range(0,2)*2-1, 0);
         _minigameFishZoneDirection = new Vector3(0, Random.Range(0,2)*2-1, 0);
-        
-        minigameFishZone.transform.localScale = new Vector3(0.2f, fishZoneSize, 1f);
+        minigameFishZone.size = new Vector2(minigameFishZone.size.x, fishZoneSize);
         fzHalfY = 1 + (0.05f * (6 - (fishZoneSize * 10f) - 1));
         
-        minigameBarBackground.color = Color.grey;
-        minigamePlayerIcon.color = Color.blue;
-        minigameFishZone.color = Color.green;
+        minigameBarBackground.color = Color.white;
+        minigamePlayerIcon.color = Color.white;
+        minigameFishZone.color = Color.white;
         minigameFatigueBar.gameObject.SetActive(true);
         minigameTimerBar.gameObject.SetActive(true);
     }
@@ -107,7 +108,7 @@ public class FishingUI : MonoBehaviour
         minigamePlayerIcon.transform.position = new Vector3(minigamePlayerIcon.transform.position.x, 0, minigamePlayerIcon.transform.position.z);
         minigameFishZone.transform.position = new Vector3(minigameFishZone.transform.position.x, 0, minigameFishZone.transform.position.z);
         
-        minigameFishZone.transform.localScale = new Vector3(0.2f, fzScaleY, 1f);
+        minigameFishZone.size = new Vector2(minigameFishZone.size.x, 0.5f);
         fzHalfY = 1 + (0.05f * (6 - (fzScaleY * 10f) - 1));
 
         minigameBarBackground.color = Color.clear;
