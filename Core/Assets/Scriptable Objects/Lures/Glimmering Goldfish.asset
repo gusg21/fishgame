@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
-  m_Name: Silver Minnow Crank Bait
+  m_Name: Glimmering Goldfish
   m_EditorClassIdentifier: 
-  Type: 3
-  LureSprite: {fileID: 21300000, guid: 5473770d52a696844b5c3f9b75f38c2c, type: 3}
+  Type: 16
+  LureSprite: {fileID: 21300000, guid: 6ee51ec0caa6a6e45b95b86db1afc0d7, type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
-  m_Name: Silver Minnow Crank Bait
+  m_Name: Haunted Hook
   m_EditorClassIdentifier: 
-  Type: 3
-  LureSprite: {fileID: 21300000, guid: 5473770d52a696844b5c3f9b75f38c2c, type: 3}
+  Type: 19
+  LureSprite: {fileID: 21300000, guid: 05e83e7ff2c72c443a4af62d6d422b01, type: 3}

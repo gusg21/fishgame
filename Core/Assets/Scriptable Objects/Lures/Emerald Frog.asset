@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Emerald Frog
   m_EditorClassIdentifier: 
   Type: 2
-  LureSprite: {fileID: 0}
+  LureSprite: {fileID: 21300000, guid: 29799ba6a3b399a4ab6e081cef1810e5, type: 3}

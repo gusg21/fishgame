@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Green Flash Spinner
   m_EditorClassIdentifier: 
   Type: 7
-  LureSprite: {fileID: 0}
+  LureSprite: {fileID: 21300000, guid: 271503fd3be00c74a879a29f97c5a9bf, type: 3}

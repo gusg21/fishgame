@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Firecracker Spoon
   m_EditorClassIdentifier: 
   Type: 4
-  LureSprite: {fileID: 0}
+  LureSprite: {fileID: 21300000, guid: fbaa44633202ce24282596dfe181a4dc, type: 3}

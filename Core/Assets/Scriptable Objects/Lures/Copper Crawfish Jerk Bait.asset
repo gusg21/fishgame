@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Copper Crawfish Jerk Bait
   m_EditorClassIdentifier: 
   Type: 5
-  LureSprite: {fileID: 0}
+  LureSprite: {fileID: 21300000, guid: e8d6bdc6ec7f13d429dfc6b89ef16b4d, type: 3}
