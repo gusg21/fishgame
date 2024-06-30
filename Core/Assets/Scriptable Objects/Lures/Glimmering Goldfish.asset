@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
   m_Name: Glimmering Goldfish
   m_EditorClassIdentifier: 
-  Type: 16
+  Type: 17
   LureSprite: {fileID: 21300000, guid: 6ee51ec0caa6a6e45b95b86db1afc0d7, type: 3}

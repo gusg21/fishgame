@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
   m_Name: Midnight Marauder Jig
   m_EditorClassIdentifier: 
-  Type: 11
+  Type: 12
   LureSprite: {fileID: 21300000, guid: f7aec036a7a542e4aa1d8c0052d78d1e, type: 3}

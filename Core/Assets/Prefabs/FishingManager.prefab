@@ -47,8 +47,34 @@ MonoBehaviour:
   ui: {fileID: 0}
   depthFishPools:
   - {fileID: 11400000, guid: 10b9e13bc760eac498b48a7c3f74e9be, type: 2}
+  - {fileID: 11400000, guid: 871014afb85f7c04197b0ed5b323872c, type: 2}
+  - {fileID: 11400000, guid: 8708b379010bd204881d03eaea554b11, type: 2}
+  - {fileID: 11400000, guid: 6497b280a6df83246b6477874826a238, type: 2}
+  - {fileID: 11400000, guid: 8c0b58fdd1c290840abc6042cd78891b, type: 2}
+  - {fileID: 11400000, guid: 76ff8e883b00e2047aa84346f0ad2d42, type: 2}
+  - {fileID: 11400000, guid: 42da1ae14a903cb44b574cdc2a725b69, type: 2}
+  - {fileID: 11400000, guid: 63c292a557482654cb9da2cfc9c03567, type: 2}
+  - {fileID: 11400000, guid: c30426343edecc34ba65beb9df24ca16, type: 2}
   lures:
+  - {fileID: 11400000, guid: 358db67f8ddcf6749b8d9c005ee33a0a, type: 2}
   - {fileID: 11400000, guid: 1305fe2b2383c2c45822aa7d648b18a7, type: 2}
+  - {fileID: 11400000, guid: cdc6cf443b3eefe409dbd1ad5edf57cf, type: 2}
+  - {fileID: 11400000, guid: c567151e82aff204e9f1b6725514ec34, type: 2}
+  - {fileID: 11400000, guid: c800154faed685f41b8acceb227179eb, type: 2}
+  - {fileID: 11400000, guid: 88f8696145e7e764eb6dfc2390d96b3e, type: 2}
+  - {fileID: 11400000, guid: 4f7df1f4a48b96f49a7a125f13c0e4cb, type: 2}
+  - {fileID: 11400000, guid: 106ec890c03bac64ba106f36f8be0b94, type: 2}
+  - {fileID: 11400000, guid: 320549268a0b5f44d994bdb877cad237, type: 2}
+  - {fileID: 11400000, guid: 35784c3213be00747ae623e6c6157ba7, type: 2}
+  - {fileID: 11400000, guid: 9d8f651ab3f429d48a6f200e50b7b34b, type: 2}
+  - {fileID: 11400000, guid: f86915735c50d2c45beabd5568d6b0b0, type: 2}
+  - {fileID: 11400000, guid: 951c0ace1311ca34e9d7201c1c669f01, type: 2}
+  - {fileID: 11400000, guid: ebe94410978a5ba42b4b7308ab1f831f, type: 2}
+  - {fileID: 11400000, guid: 12d26e702d26fb74db3eb2faaaedecd4, type: 2}
+  - {fileID: 11400000, guid: a7ccc9f24e09f0544949c69d47c5868d, type: 2}
+  - {fileID: 11400000, guid: 96d585aab3d2dc54cbdaa5bb7f4a9114, type: 2}
+  - {fileID: 11400000, guid: e2ecc7bc9e034f9418874900e4b6a013, type: 2}
+  - {fileID: 11400000, guid: c402ee8fe2122fc458befa322ac53a1a, type: 2}
   - {fileID: 11400000, guid: d83e22e7d66bfca4b9582badf9a93203, type: 2}
   caughtPopup: {fileID: 0}
   releasedPopup: {fileID: 0}

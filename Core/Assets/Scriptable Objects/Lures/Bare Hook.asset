@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
   m_Name: Bare Hook
   m_EditorClassIdentifier: 
-  Type: 0
-  LureSprite: {fileID: 0}
-  TargetFish: []
+  Type: 1
+  LureSprite: {fileID: 21300000, guid: ba391b2e7fb66564d9493e45b24ef947, type: 3}

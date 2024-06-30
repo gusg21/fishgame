@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6469869b080ac848ba347274b8c4108, type: 3}
-  m_Name: TestDepth
+  m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
+  m_Name: Azure Mirage Jig
   m_EditorClassIdentifier: 
-  DepthLayer: 0
-  CatchableFish:
-  - {fileID: 11400000, guid: 5b262f295f4e44946945abaacb89b818, type: 2}
-  - {fileID: 11400000, guid: 3002ecf5713f19d4d8618bdaafa73313, type: 2}
+  Type: 14
+  LureSprite: {fileID: 21300000, guid: 6447cf88e3bde2d49906a5a44dab98cb, type: 3}

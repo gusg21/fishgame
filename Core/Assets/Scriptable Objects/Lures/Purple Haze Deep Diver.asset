@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
   m_Name: Purple Haze Deep Diver
   m_EditorClassIdentifier: 
-  Type: 10
+  Type: 11
   LureSprite: {fileID: 21300000, guid: 92ccfbb27b9962547924eb818cce0494, type: 3}

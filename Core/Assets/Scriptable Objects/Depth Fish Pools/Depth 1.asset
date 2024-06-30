@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6469869b080ac848ba347274b8c4108, type: 3}
   m_Name: Depth 1
   m_EditorClassIdentifier: 
-  DepthLayer: 0
+  DepthLayer: 1
   CatchableFish:
   - {fileID: 11400000, guid: 2e0bc4eb5807bf94f978c9ccd92d4a6c, type: 2}
   - {fileID: 11400000, guid: f58c80e786be96e48acc5bef33251247, type: 2}

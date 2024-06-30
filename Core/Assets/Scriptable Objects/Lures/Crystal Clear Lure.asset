@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
   m_Name: Crystal Clear Lure
   m_EditorClassIdentifier: 
-  Type: 17
+  Type: 18
   LureSprite: {fileID: 21300000, guid: 3a8d5a3df0495df4cb9383c7db686aa5, type: 3}
