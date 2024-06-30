@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class HUDManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private SimpleButton fishLibButton;
     [SerializeField] private SpriteRenderer moneyBackground;
     [SerializeField] private TextMeshPro moneyText;
+    [SerializeField] private MoveBetween hookMoveBetween;
+    [SerializeField] private SpriteRenderer currentHookSprite;
     
     [Header("Lure HUD")]
     [SerializeField] private MoveBetween lureSelectMoveBetween;
@@ -94,6 +97,20 @@ public class HUDManager : MonoBehaviour
         lureIcon.sprite = nextLure.LureSprite;
         lureNameText.text = nextLure.name;
     }
+
+    public void PurchaseItem()
+    {
+        if (GameManager.I.CurrentMoney >= InfoPanelController.I.GetCurrentTooltip().GetCost() && 
+            (GameManager.I.GetFishingManager().UnlockLure(InfoPanelController.I.GetCurrentTooltip().GetLureUnlock()) || 
+             GameManager.I.GetFishingManager().UnlockHook(InfoPanelController.I.GetCurrentTooltip().GetHookUnlock())))
+        {
+            GameManager.I.CurrentMoney -= InfoPanelController.I.GetCurrentTooltip().GetCost();
+            if (InfoPanelController.I.GetCurrentTooltip().GetHookUnlock() != HookType.NONE)
+            {
+                currentHookSprite.sprite = InfoPanelController.I.GetCurrentTooltip().GetIcon();
+            }
+        }
+    }
     
     public void EnableHUD()
     {
@@ -106,6 +123,7 @@ public class HUDManager : MonoBehaviour
         _fishLibButtonMoveBetween.MoveIn();
         _moneyBGMoveBetween.MoveIn();
         lureSelectMoveBetween.MoveIn();
+        hookMoveBetween.MoveIn();
     }
 
     public void DisableHUD()
@@ -119,5 +137,6 @@ public class HUDManager : MonoBehaviour
         _fishLibButtonMoveBetween.MoveOut();
         _moneyBGMoveBetween.MoveOut();
         lureSelectMoveBetween.MoveOut();
+        hookMoveBetween.MoveOut();
     }
 }

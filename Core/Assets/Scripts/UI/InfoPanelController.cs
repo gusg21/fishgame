@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class TooltipController : MonoBehaviour
+public class InfoPanelController : MonoBehaviour
     {
-        public static TooltipController I;
+        public static InfoPanelController I;
         
-        [SerializeField] private TMP_Text _text;
+        [SerializeField] private TMP_Text _nameText;
+        [SerializeField] private TMP_Text _costText;
         [SerializeField] private GameObject _tooltipUI;
         [SerializeField] private float _edgeRatio = 0.8f;
-        [SerializeField] private float _verticalOffsetOnFlip = 40f;
 
-        private Tooltip _tip;
+        private StoreInfo _tip;
 
         private void Start()
         {
@@ -25,18 +25,18 @@ public class TooltipController : MonoBehaviour
             I = null;
         }
 
-        public void TooltipEntered(Tooltip tip)
+        public void TooltipEntered(StoreInfo tip)
         {
             _tip = tip;
             _tooltipUI.GetComponentInChildren<LayoutElement>().preferredWidth = _tip.GetPreferredWidth();
         }
 
-        public void TooltipExited(Tooltip tip)
+        public void TooltipExited(StoreInfo tip)
         {
             _tip = null;
         }
 
-        public Tooltip GetCurrentTooltip() => _tip;
+        public StoreInfo GetCurrentTooltip() => _tip;
 
         private void Update()
         {
@@ -44,8 +44,8 @@ public class TooltipController : MonoBehaviour
 
             if (_tip != null)
             {
-                var str = _tip.GetString();
-                _text.text = String.IsNullOrWhiteSpace(str) ? "ERR" : str;
+                _nameText.text = String.IsNullOrWhiteSpace(_tip.GetName()) ? "ERR" : _tip.GetName();
+                _costText.text = _tip.GetCost().ToString();
             }
 
             // Determine flip flags
@@ -54,8 +54,5 @@ public class TooltipController : MonoBehaviour
                 Camera.main.WorldToScreenPoint(worldPos).x > Screen.width * _edgeRatio;
             var mouseNearBottom = 
                 Camera.main.WorldToScreenPoint(worldPos).y < Screen.width * (1f - _edgeRatio);
-
-            // Align text right if needed
-            _text.alignment = mouseNearRight ? TextAlignmentOptions.Right : TextAlignmentOptions.Left;
         }
     }

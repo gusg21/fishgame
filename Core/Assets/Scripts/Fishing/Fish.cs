@@ -12,7 +12,7 @@ public class Fish
     public List<LureType> GetBestLure() => _data.BestLure;
     public int GetBestLureCatchBonus() => _data.BestLureCatchBonus;
     public int GetDifficulty() => _data.Difficulty;
-    public float GetSellPrice() => _data.SellPrice;
+    public int GetSellPrice() => _data.SellPrice;
 
     public Fish(FishData data) => _data = data;
 }

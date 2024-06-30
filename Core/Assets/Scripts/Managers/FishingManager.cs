@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public enum LureType
 {
+    NONE,
     BAREHOOK,
     SUNBURSTPOPPER,
     EMERALDFROG,
@@ -35,8 +36,12 @@ public enum LureType
 
 public enum HookType
 {
-    BASICHOOK = 0,
-    BETTERHOOK = 5,
+    NONE,
+    BASICHOOK,
+    BETTERHOOK,
+    PROHOOK,
+    GOLDENHOOK,
+    DIAMONDHOOK
 }
 
 public class FishingManager : MonoBehaviour
@@ -185,6 +190,30 @@ public class FishingManager : MonoBehaviour
     {
         if (_unlockedLures.Contains(lureToUnlock)) return;
         _unlockedLures.Add(lureToUnlock);
+    }
+    
+    public bool UnlockLure(LureType lureToUnlock)
+    {
+        if (lureToUnlock != LureType.NONE)
+        {
+            foreach (Lure lure in lures)
+            {
+                if (lureToUnlock == lure.Type)
+                {
+                    if (_unlockedLures.Contains(lure)) return false;
+                    _unlockedLures.Add(lure); 
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    public bool UnlockHook(HookType hookToUnlock)
+    {
+        if (_currentHookType >= hookToUnlock) return false;
+        _currentHookType = hookToUnlock;
+        return true;
     }
 
     private void CreateActiveFish()

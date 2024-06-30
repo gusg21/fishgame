@@ -1,9 +1,16 @@
 using System;
 using UnityEngine;
 
-public class Tooltip : MonoBehaviour
+public class StoreInfo : MonoBehaviour
 {
-    [SerializeField] private string _tooltipString;
+    [SerializeField] private string itemName;
+    [SerializeField] private SpriteRenderer itemIcon;
+    [SerializeField] private int itemCost;
+    
+    // Choose one
+    [SerializeField] private LureType lureType;
+    [SerializeField] private HookType hookType;
+    
     [SerializeField] private Color _color = Color.white;
     [SerializeField] private bool _enabledOnStart = true;
     [SerializeField] private float _preferredWidth = 55;
@@ -14,8 +21,12 @@ public class Tooltip : MonoBehaviour
         if (!_enabledOnStart) enabled = false;
     }
 
-    public string GetString() => _tooltipString;
-    public void SetString(string str) => _tooltipString = str;
+    public string GetName() => itemName;
+    public void SetName(string str) => itemName = str;
+    public int GetCost() => itemCost;
+    public Sprite GetIcon() => itemIcon.sprite;
+    public LureType GetLureUnlock() => lureType;
+    public HookType GetHookUnlock() => hookType;
     public Color GetColor() => _color;
     public void SetColor(Color tipColor) => _color = tipColor;
     public float GetPreferredWidth() => _preferredWidth;
@@ -26,19 +37,19 @@ public class Tooltip : MonoBehaviour
     private void OnMouseEnter()
     {
         if (enabled && !_disable)
-            TooltipController.I.TooltipEntered(this);
+            InfoPanelController.I.TooltipEntered(this);
     }
 
     private void OnMouseExit()
     {
         if (enabled && !_disable)
-            TooltipController.I.TooltipExited(this);
+            InfoPanelController.I.TooltipExited(this);
     }
 
     private void OnDisable()
     {
-        if (TooltipController.I != null)
-            if (TooltipController.I.GetCurrentTooltip() == this)    
-                TooltipController.I.TooltipExited(this);
+        if (InfoPanelController.I != null)
+            if (InfoPanelController.I.GetCurrentTooltip() == this)    
+                InfoPanelController.I.TooltipExited(this);
     }
 }

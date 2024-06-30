@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager I;
     public static MouseState CurrentMouseState { get; set; }
-    public float CurrentMoney { get; set; }
+    public int CurrentMoney { get; set; }
 
     private void Awake()
     {
@@ -26,11 +26,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
         CurrentMouseState = MouseState.DEFAULT;
+        CurrentMoney = SaveSystem.LoadMoney();
     }
 
     private void OnDisable()
     {
         if (I == this) I = null;
+        
+        SaveSystem.SaveMoney(CurrentMoney);
     }
     
     [SerializeField] private SeymourController _seymour;

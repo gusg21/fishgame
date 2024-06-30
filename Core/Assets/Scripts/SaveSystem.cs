@@ -34,6 +34,34 @@ public static class SaveSystem
         
         return 0;
     }
+    
+    public static void SaveMoney(int money)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string filePath = Application.persistentDataPath + "/savedMoney.cap";
+        
+        FileStream fout = new FileStream(filePath, FileMode.Create);
+        
+        formatter.Serialize(fout, money);
+        fout.Close();
+    }
+    
+    public static int LoadMoney()
+    {
+        string filePath = Application.persistentDataPath + "/savedMoney.cap";
+
+        if (File.Exists(filePath))
+        {
+            BinaryFormatter formatter = new();
+            FileStream fin = new FileStream(filePath, FileMode.Open);
+            
+            int money = (int) formatter.Deserialize(fin);
+            fin.Close();
+            return money;
+        }
+        
+        return 5;
+    }
 
     public static void SaveUnlockedLures(List<Lure> unlockedLures)
     {
