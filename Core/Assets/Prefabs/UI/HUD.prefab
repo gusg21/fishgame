@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Midnight Marauder
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 170
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Electric Eel Jerkbait
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 85
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -673,9 +673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Azure Mirage Jig
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 240
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -1015,9 +1015,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Neon Glow Spoon
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 200
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -1527,9 +1527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Firecracker Spoon
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 40
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -2051,9 +2051,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Purple Haze
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 100
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -2840,9 +2840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Ruby Vortext Crankbait
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 255
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -3011,9 +3011,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Rainbow Sparkle Lure
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 280
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -3182,9 +3182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Haunted Hook
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 370
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -3985,9 +3985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Emerald Frog
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 30
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -4156,9 +4156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Glimmering Goldfish
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 315
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -4327,9 +4327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Green Flash Spinner
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 85
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -5641,9 +5641,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Copper Crawfish
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 55
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -5980,9 +5980,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Gold Nugget Crankbait
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 90
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -6287,9 +6287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Crystal Clear Lure
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 345
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -7937,9 +7937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Mystic Moon
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 360
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -8489,9 +8489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Silver Minnow Crank Bait
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 40
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -8660,9 +8660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90296f15ce2784184a1371793ed78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Pink Shimmer Worm
   itemIcon: {fileID: 0}
-  itemCost: 0
+  itemCost: 75
   lureType: 0
   hookType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
