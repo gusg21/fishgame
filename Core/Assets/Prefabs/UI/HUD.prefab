@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Basic Lure
+  m_text: Bare Hook
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7931dec5f3da6f49a6b1fa0b0a26c75, type: 2}
   m_sharedMaterial: {fileID: 8474449396598649808, guid: c7931dec5f3da6f49a6b1fa0b0a26c75, type: 2}

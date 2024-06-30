@@ -49,9 +49,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 10b9e13bc760eac498b48a7c3f74e9be, type: 2}
   lures:
   - {fileID: 11400000, guid: 1305fe2b2383c2c45822aa7d648b18a7, type: 2}
+  - {fileID: 11400000, guid: d83e22e7d66bfca4b9582badf9a93203, type: 2}
   caughtPopup: {fileID: 0}
   releasedPopup: {fileID: 0}
   popupMoneyText: {fileID: 0}
   popupFishText: {fileID: 0}
   popupFishIcon: {fileID: 0}
-  _currentHookType: 0

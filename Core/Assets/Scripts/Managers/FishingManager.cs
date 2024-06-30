@@ -56,10 +56,11 @@ public class FishingManager : MonoBehaviour
     [SerializeField] private SpriteRenderer popupFishIcon;
     
     // Fishing Settings
-    private Dictionary<Lure, bool> _unlockedLures = new();
+    private List<Lure> _unlockedLures = new();
     private List<Fish> _activeFish = new();
     private Fish _selectedFish;
     private Lure _selectedLure;
+    private int _currentLureIndex;
     private HookType _currentHookType;
     private int _currentDepth;
     
@@ -80,9 +81,22 @@ public class FishingManager : MonoBehaviour
         SeymourController.onMinigameClick += CheckMinigameClick;
         
         _currentHookType = SaveSystem.LoadHookType();
+        List<LureType> unlockedLureSave = SaveSystem.LoadUnlockedLures();
+        foreach (Lure lure in lures)
+        {
+            if (unlockedLureSave.Contains(lure.Type))
+            {
+                UnlockLure(lure);
+            }
+        }
         _currentDepth = 0;
-        _selectedLure = lures[0];
-        _unlockedLures[_selectedLure] = true;
+
+        if (_unlockedLures.Count <= 0)
+        {
+            UnlockLure(lures[0]);
+            _selectedLure = _unlockedLures[0];
+            _currentLureIndex = 0;
+        }
         
         ui.HideMinigame();
     }
@@ -90,16 +104,12 @@ public class FishingManager : MonoBehaviour
     private void OnDestroy()
     {
         SaveSystem.SaveHookType(_currentHookType);
-        //SaveSystem.SaveUnlockedLures(_unlockedLures);
+        SaveSystem.SaveUnlockedLures(_unlockedLures);
         Debug.Log("Progress saved!");
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            _currentHookType = HookType.BETTERHOOK;
-        }
         if (GameManager.CurrentMouseState == MouseState.FISHINGMINIGAME)
         {
             if (_waitForFishRelease)
@@ -131,12 +141,32 @@ public class FishingManager : MonoBehaviour
 
     public Lure GetNextUnlockedLure()
     {
+        _currentLureIndex++;
+        if (_currentLureIndex > _unlockedLures.Count - 1)
+        {
+            _currentLureIndex = 0;
+        }
+
+        _selectedLure = _unlockedLures[_currentLureIndex];
         return _selectedLure;
     }
 
     public Lure GetPreviousUnlockedLure()
     {
+        _currentLureIndex--;
+        if (_currentLureIndex < 0)
+        {
+            _currentLureIndex = _unlockedLures.Count - 1;
+        }
+
+        _selectedLure = _unlockedLures[_currentLureIndex];
         return _selectedLure;
+    }
+
+    public void UnlockLure(Lure lureToUnlock)
+    {
+        if (_unlockedLures.Contains(lureToUnlock)) return;
+        _unlockedLures.Add(lureToUnlock);
     }
 
     private void CreateActiveFish()

@@ -35,25 +35,25 @@ public static class SaveSystem
         return 0;
     }
 
-    public static void SaveUnlockedLures(Dictionary<Lure, bool> lures)
+    public static void SaveUnlockedLures(List<Lure> unlockedLures)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string filePath = Application.persistentDataPath + "/unlockedLures.cap";
         
         FileStream fout = new FileStream(filePath, FileMode.Create);
 
-        List<bool> unlockedLures = new();
+        List<LureType> unlockedLuresTypes = new();
 
-        foreach (var lure in lures)
+        foreach (var lure in unlockedLures)
         {
-            unlockedLures.Add(lure.Value);
+            unlockedLuresTypes.Add(lure.Type);
         }
         
-        formatter.Serialize(fout, unlockedLures);
+        formatter.Serialize(fout, unlockedLuresTypes);
         fout.Close();
     }
 
-    public static List<bool> LoadUnlockedLures()
+    public static List<LureType> LoadUnlockedLures()
     {
         string filePath = Application.persistentDataPath + "/unlockedLures.cap";
         
@@ -62,7 +62,7 @@ public static class SaveSystem
             BinaryFormatter formatter = new();
             FileStream fin = new FileStream(filePath, FileMode.Open);
             
-            List<bool> luresUnlockedState = (List<bool>) formatter.Deserialize(fin);
+            List<LureType> luresUnlockedState = (List<LureType>) formatter.Deserialize(fin);
             fin.Close();
             return luresUnlockedState;
         }
