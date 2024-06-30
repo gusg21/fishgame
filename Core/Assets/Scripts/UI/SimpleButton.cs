@@ -42,7 +42,7 @@ public class SimpleButton : MonoBehaviour
        
     private void OnMouseEnter()
     {
-        if (GameManager.CurrentMouseState == MouseState.DEFAULT && Active)
+        if (Active)
         {
             _isMouseOver = true;
         }
@@ -63,7 +63,7 @@ public class SimpleButton : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (GameManager.CurrentMouseState == MouseState.DEFAULT && Active)
+        if (Active)
         {
             _isMouseOver = true;
         }

@@ -94,7 +94,7 @@ public class FishingManager : MonoBehaviour
                 UnlockLure(lure);
             }
         }
-        _currentDepth = 0;
+        _currentDepth = 1;
 
         if (_unlockedLures.Count <= 0)
         {

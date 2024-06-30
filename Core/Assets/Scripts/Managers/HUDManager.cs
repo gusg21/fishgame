@@ -55,8 +55,16 @@ public class HUDManager : MonoBehaviour
         if (!_libraryOpen)
         {
             _storeOpen = !_storeOpen;
-            if (_storeOpen == true) storeMoveBetween.MoveIn();
-            else storeMoveBetween.MoveOut();
+            if (_storeOpen == true)
+            {
+                storeMoveBetween.MoveIn();
+                GameManager.CurrentMouseState = MouseState.UI;
+            }
+            else
+            {
+                storeMoveBetween.MoveOut();
+                GameManager.CurrentMouseState = MouseState.DEFAULT;
+            }
         }
         else
         {

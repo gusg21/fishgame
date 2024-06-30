@@ -16,6 +16,7 @@ public class FishingUI : MonoBehaviour
     [SerializeField] private SpriteRenderer minigameFishZone;
     [SerializeField] private float fzScaleY;
     [SerializeField] private float fzHalfY;
+    [SerializeField] private List<FishBoid> fishVisuals;
     
     [Header("Player Icon")]
     [SerializeField] private SpriteRenderer minigamePlayerIcon;

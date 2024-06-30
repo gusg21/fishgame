@@ -621,6 +621,14 @@ PrefabInstance:
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2823314028563585434, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823314028563585434, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 3503020947481825195, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -721,10 +729,6 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6510382387156442614, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 6636077522593056769, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -784,6 +788,22 @@ PrefabInstance:
     - target: {fileID: 7987542962152072976, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
       propertyPath: m_fontSizeBase
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223487165115566091, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223487165115566091, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223487165115566091, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba391b2e7fb66564d9493e45b24ef947, type: 3}
+    - target: {fileID: 8223487165115566091, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8230518482446040911, guid: 9befbda4c0cb7494688abc5cc00df7a7, type: 3}
       propertyPath: m_Mesh
