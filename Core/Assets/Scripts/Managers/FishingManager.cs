@@ -94,9 +94,10 @@ public class FishingManager : MonoBehaviour
         if (_unlockedLures.Count <= 0)
         {
             UnlockLure(lures[0]);
-            _selectedLure = _unlockedLures[0];
-            _currentLureIndex = 0;
         }
+        
+        _selectedLure = _unlockedLures[0];
+        _currentLureIndex = 0;
         
         ui.HideMinigame();
     }
@@ -138,6 +139,23 @@ public class FishingManager : MonoBehaviour
     }
 
     public int GetCurrentDepth() => _currentDepth;
+
+    public List<FishData> GetBestFishByLure(LureType lure)
+    {
+        List<FishData> bestFish = new();
+        foreach (DepthFishPool depth in depthFishPools)
+        {
+            foreach (FishData fish in depth.CatchableFish)
+            {
+                if (fish.BestLure.Contains(lure))
+                {
+                    bestFish.Add(fish);
+                }
+            }
+        }
+
+        return new();
+    }
 
     public Lure GetNextUnlockedLure()
     {
