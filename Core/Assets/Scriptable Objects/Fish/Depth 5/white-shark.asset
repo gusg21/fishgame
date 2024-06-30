@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: white-shark
   m_EditorClassIdentifier: 
   Name: white-shark
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 50723c9acdfc3fa46a67cccf44182a94, type: 3}
   CatchChance: 1
   BestLure: 130000000c000000
   BestLureCatchBonus: 6

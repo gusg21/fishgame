@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: goblin-shark
   m_EditorClassIdentifier: 
   Name: goblin-shark
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 6851250b4f2994947bd7edf745a25964, type: 3}
   CatchChance: 4
   BestLure: 0a00000012000000
   BestLureCatchBonus: 4

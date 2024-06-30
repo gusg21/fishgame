@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sheephead
   m_EditorClassIdentifier: 
   Name: sheephead
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 168938e50b8530348abd7f6e3a3edfe2, type: 3}
   CatchChance: 13
   BestLure: 050000000c000000
   BestLureCatchBonus: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: hammerhehad-shark
   m_EditorClassIdentifier: 
   Name: hammerhehad-shark
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 04bf674481ae8284c857d9708a230f76, type: 3}
   CatchChance: 6
   BestLure: 0d00000015000000
   BestLureCatchBonus: 3

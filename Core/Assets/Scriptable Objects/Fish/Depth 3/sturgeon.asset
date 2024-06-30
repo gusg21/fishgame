@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sturgeon
   m_EditorClassIdentifier: 
   Name: sturgeon
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 8df3682b727f8524b84e28919a8ad788, type: 3}
   CatchChance: 2
   BestLure: 0d000000
   BestLureCatchBonus: 14

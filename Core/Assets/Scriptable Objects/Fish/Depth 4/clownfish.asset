@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: clownfish
   m_EditorClassIdentifier: 
   Name: clownfish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 4d88f5f4aeba59541821e4ba1ec9f779, type: 3}
   CatchChance: 6
   BestLure: 12000000
   BestLureCatchBonus: 9

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: angelfish
   m_EditorClassIdentifier: 
   Name: angelfish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 0c88f560c5dad0d4fa1a2943c0476a55, type: 3}
   CatchChance: 5
   BestLure: 1200000011000000
   BestLureCatchBonus: 7

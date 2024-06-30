@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: barreleye
   m_EditorClassIdentifier: 
   Name: barreleye
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 70a73ecd5548c64419c4ec82d7eda480, type: 3}
   CatchChance: 9
   BestLure: 0600000010000000
   BestLureCatchBonus: 9

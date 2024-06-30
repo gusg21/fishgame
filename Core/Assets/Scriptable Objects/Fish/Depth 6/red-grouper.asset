@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: red-grouper
   m_EditorClassIdentifier: 
   Name: red-grouper
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 8dd8e227ac66cb8458fbc244330ed908, type: 3}
   CatchChance: 10
   BestLure: 0900000013000000
   BestLureCatchBonus: 4

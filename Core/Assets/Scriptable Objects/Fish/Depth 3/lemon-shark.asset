@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lemon-shark
   m_EditorClassIdentifier: 
   Name: lemon-shark
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: ae745b38c22c8df4c903a7363f18d477, type: 3}
   CatchChance: 2
   BestLure: 0700000010000000
   BestLureCatchBonus: 7

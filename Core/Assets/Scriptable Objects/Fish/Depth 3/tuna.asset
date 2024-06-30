@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: tuna
   m_EditorClassIdentifier: 
   Name: tuna
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 3c78d13836c11b149865013d85fc2035, type: 3}
   CatchChance: 4
   BestLure: 050000000e000000
   BestLureCatchBonus: 9

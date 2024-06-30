@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: squid
   m_EditorClassIdentifier: 
   Name: squid
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 6db3fa7aa9b81ad4e9555df2052c0778, type: 3}
   CatchChance: 16
   BestLure: 0b00000012000000
   BestLureCatchBonus: 2

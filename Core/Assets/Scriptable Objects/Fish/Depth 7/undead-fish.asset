@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: undead-fish
   m_EditorClassIdentifier: 
   Name: undead-fish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: dbc8d0a71287c6b49a56e5dda0fc19c0, type: 3}
   CatchChance: 1
   BestLure: 15000000
   BestLureCatchBonus: 6

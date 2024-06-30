@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: seahorse
   m_EditorClassIdentifier: 
   Name: seahorse
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 47d4a58b58fbb2c43a545f2b00c9a419, type: 3}
   CatchChance: 12
   BestLure: 080000000f000000
   BestLureCatchBonus: 3

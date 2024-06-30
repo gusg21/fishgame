@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: starfish
   m_EditorClassIdentifier: 
   Name: starfish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: f1d0ed9876cb250488063f520d8fb11e, type: 3}
   CatchChance: 12
   BestLure: 1300000011000000
   BestLureCatchBonus: 5

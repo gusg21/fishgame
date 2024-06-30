@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: parrot-fish
   m_EditorClassIdentifier: 
   Name: parrot-fish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 54126c47a91051d48875b107b092f838, type: 3}
   CatchChance: 4
   BestLure: 0800000009000000
   BestLureCatchBonus: 7

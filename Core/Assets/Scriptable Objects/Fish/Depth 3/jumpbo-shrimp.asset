@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: jumpbo-shrimp
   m_EditorClassIdentifier: 
   Name: jumbo-shrimp
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 5ec065ccfd8c6a2458b530c59a8d334a, type: 3}
   CatchChance: 15
   BestLure: 040000000f000000
   BestLureCatchBonus: 2

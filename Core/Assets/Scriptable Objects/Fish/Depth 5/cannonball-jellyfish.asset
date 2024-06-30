@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: cannonball-jellyfish
   m_EditorClassIdentifier: 
   Name: cannonball-jellyfish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 8748a2a2ce95c2545989ea52f0d04b41, type: 3}
   CatchChance: 16
   BestLure: 120000000a000000
   BestLureCatchBonus: 2

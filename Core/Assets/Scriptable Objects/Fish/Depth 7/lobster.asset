@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lobster
   m_EditorClassIdentifier: 
   Name: lobster
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: c7fda542dc387bb4b94584a987debf6e, type: 3}
   CatchChance: 10
   BestLure: 0c00000015000000
   BestLureCatchBonus: 3

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: red-snapper
   m_EditorClassIdentifier: 
   Name: red-snapper
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 54f2124af1ca79d4dbbced6ae1f23393, type: 3}
   CatchChance: 14
   BestLure: 0a0000000f000000
   BestLureCatchBonus: 3

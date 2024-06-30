@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: giant-clam
   m_EditorClassIdentifier: 
   Name: giant-clam
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 66a48e4e06d60f04894ebb93f1bea1d4, type: 3}
   CatchChance: 9
   BestLure: 07000000
   BestLureCatchBonus: 6

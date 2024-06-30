@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: blobfish
   m_EditorClassIdentifier: 
   Name: blobfish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 293796c50e75ab34f8aacf8c09ff3a49, type: 3}
   CatchChance: 3
   BestLure: 14000000
   BestLureCatchBonus: 9

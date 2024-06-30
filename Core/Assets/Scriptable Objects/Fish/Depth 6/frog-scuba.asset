@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: frog-scuba
   m_EditorClassIdentifier: 
   Name: frog-scuba
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: db90ddacff77d7549b12785eeab4a49e, type: 3}
   CatchChance: 1
   BestLure: 02000000
   BestLureCatchBonus: 9

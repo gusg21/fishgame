@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lion-fish
   m_EditorClassIdentifier: 
   Name: lion-fish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 36a19498a2e34d948ab6a530abbda2a5, type: 3}
   CatchChance: 17
   BestLure: 110000000c000000
   BestLureCatchBonus: 2

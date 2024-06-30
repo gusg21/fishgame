@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: axolotl
   m_EditorClassIdentifier: 
   Name: axolotl
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 1fd3a219d0fd4c144a354b6f72cea905, type: 3}
   CatchChance: 1
   BestLure: 080000000e000000
   BestLureCatchBonus: 3

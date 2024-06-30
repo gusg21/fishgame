@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: pufferfish
   m_EditorClassIdentifier: 
   Name: pufferfish
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 1b7d83d6174892244aa32db026f52d3d, type: 3}
   CatchChance: 15
   BestLure: 0300000014000000
   BestLureCatchBonus: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: whale-shark
   m_EditorClassIdentifier: 
   Name: whale-shark
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 9d515d679417cdd41b3a6acf51fa2f1e, type: 3}
   CatchChance: 1
   BestLure: 17000000
   BestLureCatchBonus: 99

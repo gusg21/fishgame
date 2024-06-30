@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: electric-eel
   m_EditorClassIdentifier: 
   Name: electric-eel
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: f0e5587d272e3754d8274a32bd036667, type: 3}
   CatchChance: 5
   BestLure: 0b000000
   BestLureCatchBonus: 15

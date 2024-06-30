@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: stingray
   m_EditorClassIdentifier: 
   Name: stringray
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 82ef237db6154914c93cdbf88b9b7833, type: 3}
   CatchChance: 5
   BestLure: 1400000015000000
   BestLureCatchBonus: 12
