@@ -32,7 +32,7 @@ public static class SaveSystem
             return (HookType)hook;
         }
         
-        return 0;
+        return HookType.BASICHOOK;
     }
     
     public static void SaveMoney(int money)

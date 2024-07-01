@@ -14,6 +14,7 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private TextMeshPro moneyText;
     [SerializeField] private MoveBetween hookMoveBetween;
     [SerializeField] private SpriteRenderer currentHookSprite;
+    [SerializeField] private TextMeshPro depthText;
     
     [Header("Lure HUD")]
     [SerializeField] private MoveBetween lureSelectMoveBetween;
@@ -104,6 +105,18 @@ public class HUDManager : MonoBehaviour
         Lure nextLure = GameManager.I.GetFishingManager().GetNextUnlockedLure();
         lureIcon.sprite = nextLure.LureSprite;
         lureNameText.text = nextLure.name;
+    }
+    
+    public void SelectPreviousDepth()
+    {
+        DepthFishPool nextDepth = GameManager.I.GetFishingManager().GetPreviousDepth();
+        depthText.text = nextDepth.DepthInMeters + "m";
+    }
+    
+    public void SelectNextDepth()
+    {
+        DepthFishPool nextDepth = GameManager.I.GetFishingManager().GetNextDepth();
+        depthText.text = nextDepth.DepthInMeters + "m";
     }
 
     public void PurchaseItem()

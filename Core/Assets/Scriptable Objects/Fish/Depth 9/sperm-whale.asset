@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: sperm-whale
   Sprite: {fileID: 21300000, guid: 7e5c0bfc34aa5b845990641ec7fd0906, type: 3}
-  CatchChance: 1
+  CatchChance: 0
   BestLure: 18000000
   BestLureCatchBonus: 999
   Difficulty: 5

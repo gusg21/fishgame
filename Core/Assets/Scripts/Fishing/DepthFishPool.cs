@@ -6,5 +6,6 @@ using UnityEngine;
 public class DepthFishPool : ScriptableObject
 {
     public int DepthLayer;
+    public int DepthInMeters;
     public List<FishData> CatchableFish;
 }

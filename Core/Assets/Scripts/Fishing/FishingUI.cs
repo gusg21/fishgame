@@ -16,7 +16,12 @@ public class FishingUI : MonoBehaviour
     [SerializeField] private SpriteRenderer minigameFishZone;
     [SerializeField] private float fzScaleY;
     [SerializeField] private float fzHalfY;
-    [SerializeField] private List<FishBoid> fishVisuals;
+
+    [Header("Fish Visuals")] 
+    [SerializeField] private Transform fishBoidParent;
+    [SerializeField] private Transform fishHookPosition;
+    [SerializeField] private GameObject fishBoidPrefab;
+    [SerializeField] private List<FishBoid> fishBoids;
     
     [Header("Player Icon")]
     [SerializeField] private SpriteRenderer minigamePlayerIcon;
@@ -69,9 +74,33 @@ public class FishingUI : MonoBehaviour
         minigameTimerBar.SetValue(timer);
     }
 
+    public void CreateFishVisuals(List<Fish> activeFish, Fish selectedFish)
+    {
+        foreach (Fish fish in activeFish)
+        {
+            FishBoid newBoid = Instantiate(fishBoidPrefab, fishBoidParent).GetComponent<FishBoid>();
+            newBoid.FishType = fish;
+            newBoid.SetBounds(1f, -1.3f, -1f, 1f);
+            newBoid.SetSprite(fish.GetSprite());
+            fishBoids.Add(newBoid);
+        }
+    }
+
     public void UpdateFishVisuals()
     {
-        
+        foreach (FishBoid boid in fishBoids)
+        {
+            boid.UpdateMovement();
+        }
+    }
+
+    public void ClearFishVisuals()
+    {
+        foreach (FishBoid boid in fishBoids)
+        {
+            Destroy(boid.gameObject);
+        }
+        fishBoids.Clear();
     }
 
     public bool CheckMinigameZonesOverlap()
@@ -81,13 +110,12 @@ public class FishingUI : MonoBehaviour
         {
             return true;
         }
-
         return false;
     }
 
     public void SetDepthText()
     {
-        depthText.text = "Depth: " + GameManager.I.GetFishingManager().GetCurrentDepth() + "m";
+        depthText.text = "Depth: " + GameManager.I.GetFishingManager().GetCurrentDepthInMeters() + "m";
     }
 
     public void ShowMinigame(float fishZoneSize)

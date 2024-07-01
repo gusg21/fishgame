@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Depth 8
   m_EditorClassIdentifier: 
   DepthLayer: 8
+  DepthInMeters: 8
   CatchableFish:
   - {fileID: 11400000, guid: 640a88e73b22ae94ca4e691917c9fa4f, type: 2}
   - {fileID: 11400000, guid: 2bda104a3576da2499e0ac643e4d3c8a, type: 2}

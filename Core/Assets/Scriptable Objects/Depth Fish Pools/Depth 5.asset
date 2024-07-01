@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Depth 5
   m_EditorClassIdentifier: 
   DepthLayer: 5
+  DepthInMeters: 5
   CatchableFish:
   - {fileID: 11400000, guid: be64416411556404f869c3a0e5f2d12f, type: 2}
-  - {fileID: 11400000, guid: f1f4b713cd6809a4e8467b147971a8a8, type: 2}
   - {fileID: 11400000, guid: bab784b54821b3340ad03cf8d551967b, type: 2}
   - {fileID: 11400000, guid: eddf2d746ab86ce4dbca8a2bd7ecc938, type: 2}
   - {fileID: 11400000, guid: 0072011cd77c2ec4a95f32f83be7ec37, type: 2}

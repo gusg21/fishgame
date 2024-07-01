@@ -37,11 +37,11 @@ public enum LureType
 public enum HookType
 {
     NONE,
-    BASICHOOK,
-    BETTERHOOK,
-    PROHOOK,
-    GOLDENHOOK,
-    DIAMONDHOOK
+    BASICHOOK = 1,
+    BETTERHOOK = 3,
+    PROHOOK = 5,
+    GOLDENHOOK = 7,
+    DIAMONDHOOK = 9
 }
 
 public class FishingManager : MonoBehaviour
@@ -66,8 +66,9 @@ public class FishingManager : MonoBehaviour
     private Fish _selectedFish;
     private Lure _selectedLure;
     private int _currentLureIndex;
+    private int _currentDepthIndex;
     private HookType _currentHookType;
-    private int _currentDepth;
+    private DepthFishPool _currentDepth;
     
     // Timing Settings
     private bool _waitForFishBite;
@@ -94,16 +95,13 @@ public class FishingManager : MonoBehaviour
                 UnlockLure(lure);
             }
         }
-        _currentDepth = 1;
 
-        if (_unlockedLures.Count <= 0)
-        {
-            UnlockLure(lures[0]);
-        }
+        UnlockLure(LureType.BAREHOOK);
         
         _selectedLure = _unlockedLures[0];
         _currentLureIndex = 0;
-        
+
+        GetPreviousDepth();
         ui.HideMinigame();
     }
 
@@ -126,7 +124,6 @@ public class FishingManager : MonoBehaviour
                     return;
                 }
                 
-                ui.UpdateFishVisuals();
                 ui.UpdateMinigame(_currentFishFatigue, (_timeTillFishRelease - _currentTimer) / _timeTillFishRelease);
                 _currentTimer -= Time.deltaTime;
             }
@@ -136,14 +133,21 @@ public class FishingManager : MonoBehaviour
                 {
                     StartMinigame();
                 }
-
-                ui.UpdateFishVisuals();
                 _currentTimer -= Time.deltaTime;
             }
         }
     }
 
-    public int GetCurrentDepth() => _currentDepth;
+    private void FixedUpdate()
+    {
+        if (GameManager.CurrentMouseState == MouseState.FISHINGMINIGAME)
+        {
+            ui.UpdateFishVisuals();
+        }
+    }
+
+    public int GetCurrentDepthLayer() => _currentDepth.DepthLayer;
+    public int GetCurrentDepthInMeters() => _currentDepth.DepthInMeters;
 
     public List<FishData> GetBestFishByLure(LureType lure)
     {
@@ -169,8 +173,9 @@ public class FishingManager : MonoBehaviour
         {
             _currentLureIndex = 0;
         }
-
+        
         _selectedLure = _unlockedLures[_currentLureIndex];
+        
         return _selectedLure;
     }
 
@@ -184,6 +189,37 @@ public class FishingManager : MonoBehaviour
 
         _selectedLure = _unlockedLures[_currentLureIndex];
         return _selectedLure;
+    }
+    
+    public DepthFishPool GetNextDepth()
+    {
+        _currentDepthIndex++;
+        if (_currentDepthIndex > depthFishPools.Count - 1)
+        {
+            _currentDepthIndex = depthFishPools.Count - 1;
+        }
+
+        if (_currentDepthIndex + 1 > (int)_currentHookType)
+        {
+            _currentDepthIndex = (int)_currentHookType - 1;
+        }
+        
+        _currentDepth = depthFishPools[_currentDepthIndex];
+        ui.SetDepthText();
+        return _currentDepth;
+    }
+
+    public DepthFishPool GetPreviousDepth()
+    {
+        _currentDepthIndex--;
+        if (_currentDepthIndex < 0)
+        {
+            _currentDepthIndex = 0;
+        }
+        
+        _currentDepth = depthFishPools[_currentDepthIndex];
+        ui.SetDepthText();
+        return _currentDepth;
     }
 
     public void UnlockLure(Lure lureToUnlock)
@@ -218,20 +254,13 @@ public class FishingManager : MonoBehaviour
 
     private void CreateActiveFish()
     {
-        foreach (DepthFishPool pool in depthFishPools)
+        foreach (FishData data in _currentDepth.CatchableFish)
         {
-            if (pool.DepthLayer == _currentDepth)
-            {
-                foreach (FishData data in pool.CatchableFish)
-                {
-                    _activeFish.Add(new Fish(data));
-                }
-                _selectedFish = GetFishToCatch();
-                break;
-            }
+            _activeFish.Add(new Fish(data));
         }
+        _selectedFish = GetFishToCatch();
         
-        // Spawn visuals for fish
+        ui.CreateFishVisuals(_activeFish, _selectedFish);
         
         GameManager.CurrentMouseState = MouseState.FISHINGMINIGAME;
         _currentTimer = _timeTillFishBite;
@@ -287,6 +316,7 @@ public class FishingManager : MonoBehaviour
 
     private void StopMinigame()
     {
+        ui.ClearFishVisuals();
         ui.HideMinigame();
         GameManager.CurrentMouseState = MouseState.DEFAULT;
         _waitForFishRelease = false;
