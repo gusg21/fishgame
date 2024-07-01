@@ -78,7 +78,7 @@ public class SeymourController : MonoBehaviour
                     else StartWalkingToPosition(fixedMousePos);
                     break;
                 case MouseState.FISHINGZONE:
-                    if (_state == SeymourState.FISHING) break;
+                    if (_state == SeymourState.FISHING || !GameManager.I.GetFishingManager().GetFirstLureUnlocked()) break;
                     else WalkToFishingSpot(_fishingPos);
                     break;
                 case MouseState.FISHINGMINIGAME:

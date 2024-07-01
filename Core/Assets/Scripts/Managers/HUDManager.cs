@@ -44,6 +44,9 @@ public class HUDManager : MonoBehaviour
         _storeButtonMoveBetween = storeButton.GetComponent<MoveBetween>();
         _fishLibButtonMoveBetween = fishLibButton.GetComponent<MoveBetween>();
         _moneyBGMoveBetween = moneyBackground.GetComponent<MoveBetween>();
+        
+        SelectPreviousDepth();
+        SelectPreviousLure();
     }
 
     private void Update()
@@ -95,16 +98,22 @@ public class HUDManager : MonoBehaviour
 
     public void SelectPreviousLure()
     {
-        Lure nextLure = GameManager.I.GetFishingManager().GetPreviousUnlockedLure();
-        lureIcon.sprite = nextLure.LureSprite;
-        lureNameText.text = nextLure.name;
+        if (GameManager.I.GetFishingManager().GetFirstLureUnlocked())
+        {
+            Lure nextLure = GameManager.I.GetFishingManager().GetPreviousUnlockedLure();
+            lureIcon.sprite = nextLure.LureSprite;
+            lureNameText.text = nextLure.name;
+        }
     }
 
     public void SelectNextLure()
     {
-        Lure nextLure = GameManager.I.GetFishingManager().GetNextUnlockedLure();
-        lureIcon.sprite = nextLure.LureSprite;
-        lureNameText.text = nextLure.name;
+        if (GameManager.I.GetFishingManager().GetFirstLureUnlocked())
+        {
+            Lure nextLure = GameManager.I.GetFishingManager().GetNextUnlockedLure();
+            lureIcon.sprite = nextLure.LureSprite;
+            lureNameText.text = nextLure.name;
+        }
     }
     
     public void SelectPreviousDepth()

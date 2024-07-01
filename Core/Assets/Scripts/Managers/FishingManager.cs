@@ -80,6 +80,9 @@ public class FishingManager : MonoBehaviour
     // Minigame Settings
     private float _minigameFatigueChangeAmount = 0.2f;
     private float _currentFishFatigue = 1f;
+    
+    // Metagame Settings
+    private bool _firstLureUnlocked = false;
 
     private void Start()
     {
@@ -93,15 +96,11 @@ public class FishingManager : MonoBehaviour
             if (unlockedLureSave.Contains(lure.Type))
             {
                 UnlockLure(lure);
+                _firstLureUnlocked = true;
             }
         }
-
-        UnlockLure(LureType.BAREHOOK);
+        _selectedLure = _firstLureUnlocked ? _unlockedLures[_currentDepthIndex] : ScriptableObject.CreateInstance<Lure>();
         
-        _selectedLure = _unlockedLures[0];
-        _currentLureIndex = 0;
-
-        GetPreviousDepth();
         ui.HideMinigame();
     }
 
@@ -148,6 +147,8 @@ public class FishingManager : MonoBehaviour
 
     public int GetCurrentDepthLayer() => _currentDepth.DepthLayer;
     public int GetCurrentDepthInMeters() => _currentDepth.DepthInMeters;
+
+    public bool GetFirstLureUnlocked() => _firstLureUnlocked;
 
     public List<FishData> GetBestFishByLure(LureType lure)
     {
@@ -226,6 +227,7 @@ public class FishingManager : MonoBehaviour
     {
         if (_unlockedLures.Contains(lureToUnlock)) return;
         _unlockedLures.Add(lureToUnlock);
+        _firstLureUnlocked = true;
     }
     
     public bool UnlockLure(LureType lureToUnlock)
@@ -238,6 +240,7 @@ public class FishingManager : MonoBehaviour
                 {
                     if (_unlockedLures.Contains(lure)) return false;
                     _unlockedLures.Add(lure); 
+                    _firstLureUnlocked = true;
                     return true;
                 }
             }

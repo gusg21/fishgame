@@ -1448,8 +1448,8 @@ Transform:
   - {fileID: 2695818172408562189}
   - {fileID: 3976850923232281217}
   - {fileID: 8246021328816076677}
-  - {fileID: 3191741282521632212}
   - {fileID: 4308723225641313713}
+  - {fileID: 3191741282521632212}
   - {fileID: 4288891208581071226}
   - {fileID: 5485526891056516916}
   - {fileID: 6026177198623897651}
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Diamond Hook
   itemIcon: {fileID: 168021571166892904}
-  itemCost: 5
+  itemCost: 1500
   lureType: 0
   hookType: 9
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -2839,7 +2839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Golden Hook
   itemIcon: {fileID: 2266060152126969637}
-  itemCost: 4
+  itemCost: 750
   lureType: 0
   hookType: 7
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -4410,7 +4410,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bare Hook
+  m_text: 'None
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7931dec5f3da6f49a6b1fa0b0a26c75, type: 2}
   m_sharedMaterial: {fileID: 8474449396598649808, guid: c7931dec5f3da6f49a6b1fa0b0a26c75, type: 2}
@@ -7969,7 +7971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Better Hook
   itemIcon: {fileID: 5196550569496026200}
-  itemCost: 2
+  itemCost: 50
   lureType: 0
   hookType: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -9480,7 +9482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Basic Hook
   itemIcon: {fileID: 6269569641376175371}
-  itemCost: 1
+  itemCost: 0
   lureType: 0
   hookType: 1
   _color: {r: 1, g: 1, b: 1, a: 1}
@@ -11111,7 +11113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pro Hook
   itemIcon: {fileID: 4151896352541361314}
-  itemCost: 3
+  itemCost: 300
   lureType: 0
   hookType: 5
   _color: {r: 1, g: 1, b: 1, a: 1}
