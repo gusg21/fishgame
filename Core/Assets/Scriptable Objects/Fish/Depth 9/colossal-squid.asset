@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: colossal-squid
   Sprite: {fileID: 21300000, guid: e857e7c328fc26b45a1232fdf130f9bf, type: 3}
-  CatchChance: 1
-  BestLure: 16000000
+  CatchChance: 0
+  BestLure: 15000000
   BestLureCatchBonus: 999
   Difficulty: 4
   SellPrice: 200

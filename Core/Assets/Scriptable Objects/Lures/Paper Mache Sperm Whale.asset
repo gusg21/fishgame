@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34bf6d8a8304304dab31a84237907fa, type: 3}
-  m_Name: sperm-whale
+  m_Script: {fileID: 11500000, guid: 9f124bf7c6ec64f4b84ebfe7fa9a087d, type: 3}
+  m_Name: Paper Mache Sperm Whale
   m_EditorClassIdentifier: 
-  Name: sperm-whale
-  Sprite: {fileID: 21300000, guid: 7e5c0bfc34aa5b845990641ec7fd0906, type: 3}
-  CatchChance: 0
-  BestLure: 16000000
-  BestLureCatchBonus: 999
-  Difficulty: 5
-  SellPrice: 500
+  Type: 21
+  LureSprite: {fileID: 21300000, guid: 6709c3034ed451f409dd9258b5c52740, type: 3}
