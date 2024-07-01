@@ -33,7 +33,7 @@ public class FishBoid : MonoBehaviour
         {
             _rb.AddForce(GetAccelerationForce());
 
-            _rb.velocity = _rb.velocity.normalized;
+            _rb.velocity = _rb.velocity.normalized * boidSpeed;
 
             if (transform.position.x >= _boundsBR.x || transform.position.x <= _boundsTL.x)
             {

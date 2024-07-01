@@ -1448,7 +1448,19 @@ MonoBehaviour:
   _hoverSprite: {fileID: 21300000, guid: b52e8a7a498ef484da5ef0842f6c9258, type: 3}
   _onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3795879722964620789}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _renderer: {fileID: 0}
 --- !u!114 &8117416917303724901
 MonoBehaviour:
@@ -2616,7 +2628,19 @@ MonoBehaviour:
   _hoverSprite: {fileID: 21300000, guid: b52e8a7a498ef484da5ef0842f6c9258, type: 3}
   _onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3795879722964620789}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _renderer: {fileID: 0}
 --- !u!114 &9031385202053789373
 MonoBehaviour:
@@ -7296,7 +7320,19 @@ MonoBehaviour:
   _hoverSprite: {fileID: 21300000, guid: b52e8a7a498ef484da5ef0842f6c9258, type: 3}
   _onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3795879722964620789}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _renderer: {fileID: 0}
 --- !u!114 &423778186993655851
 MonoBehaviour:
@@ -9831,8 +9867,6 @@ GameObject:
   - component: {fileID: 4288891208581071226}
   - component: {fileID: 277861249942031144}
   - component: {fileID: 1037312772012029213}
-  - component: {fileID: 853590914502586499}
-  - component: {fileID: 8717949471575556290}
   m_Layer: 0
   m_Name: StoreUI
   m_TagString: Untagged
@@ -9928,64 +9962,6 @@ MonoBehaviour:
   _moveSpeed: 4
   _posOut: {x: -1.3800001, y: -3, z: 10}
   _posIn: {x: -1.3800001, y: -0.7, z: 10}
---- !u!114 &853590914502586499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8559739878499708403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a555b6dab919c04ab84e2e85a4b728c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StateToSet: 1
---- !u!61 &8717949471575556290
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8559739878499708403}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.03, y: 0.03, z: 0.03, w: 0.03}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 2, y: 3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 1
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 3}
-  m_EdgeRadius: 0
 --- !u!1 &8701890186309202816
 GameObject:
   m_ObjectHideFlags: 0
@@ -10303,7 +10279,19 @@ MonoBehaviour:
   _hoverSprite: {fileID: 21300000, guid: b52e8a7a498ef484da5ef0842f6c9258, type: 3}
   _onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3795879722964620789}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _renderer: {fileID: 0}
 --- !u!114 &1257006942790054421
 MonoBehaviour:
